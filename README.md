@@ -14,12 +14,27 @@ This full-stack Kanban application allows users to create, read, update, and del
 - Hide/show board sidebar
 - Track changes using localStorage
 
-Here is a [live demo](https://your-live-demo-url.com) of the app.
+Here is a [live demo](https:/#) of the app.
 
 ## Installation
 
 ```sh
-git clone https://github.com/your-github-username/kanban-project.git
+git clone https://github.com/vlady98ish/dashboard-jobs.git
 cd kanban-project
 npm install
 npm start
+```
+
+## The app will be available at http://localhost:3000/.
+
+## Technology Stack
+- React
+- Tailwind CSS
+- Node.js
+- Redux Toolkit
+- 
+## Contributing
+Contributions are welcome! To contribute, fork this repository and create a pull request with your changes.
+
+## License
+This project is licensed under the MIT License.
