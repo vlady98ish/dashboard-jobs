@@ -1,0 +1,5 @@
+.bg-main-purple-hover:hover {
+    background-color: #635FC7;
+    color: white;
+    border-radius: 0 100px 100px 0;
+}
