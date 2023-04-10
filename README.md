@@ -32,9 +32,7 @@ npm start
 - Tailwind CSS
 - Node.js
 - Redux Toolkit
-- 
-## Contributing
-Contributions are welcome! To contribute, fork this repository and create a pull request with your changes.
+
 
 ## License
 This project is licensed under the MIT License.
