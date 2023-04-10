@@ -20,7 +20,7 @@ Here is a [live demo](https:/#) of the app.
 
 ```sh
 git clone https://github.com/vlady98ish/dashboard-jobs.git
-cd kanban-project
+cd dashboard-jobs
 npm install
 npm start
 ```
