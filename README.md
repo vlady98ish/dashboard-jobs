@@ -1,4 +1,4 @@
-# Kanban Project
+# Kanban Project (In Progress)
 
 ![Kanban Project Screenshot](https://github.com/vlady98ish/dashboard-jobs/blob/main/preview.jpg)
 
