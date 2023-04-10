@@ -1,6 +1,6 @@
 # Kanban Project
 
-![Kanban Project Screenshot](screenshot.png)
+![Kanban Project Screenshot](https://github.com/vlady98ish/dashboard-jobs/blob/main/preview.jpg)
 
 This full-stack Kanban application allows users to create, read, update, and delete boards and tasks. The app is built using modern web technologies such as React, Tailwind, Node.js, and Redux Toolkit. The user interface is designed to be responsive and displays optimally on various screen sizes.
 
