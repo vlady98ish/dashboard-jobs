@@ -22,7 +22,7 @@ body {
 * {
     margin: 0;
     padding: 0;
-    border: none;
+    
     box-sizing: border-box;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -78,6 +78,3 @@ input[type="checkbox"] {
     scrollbar-width: none; /* Firefox */
 }
 
-.toggler.react-toggle--checked .react-toggle-track {
-    background-color: #635fc7;
-}
