@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 const Header = ({ isMobile }) => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const { selectedBoard } = useSelector((state) => state.boards);
-  const isNoColumns = selectedBoard.columns.length === 0;
   return (
     // Header container
     <header className="w-full">
@@ -60,7 +59,6 @@ const Header = ({ isMobile }) => {
             margin={isMobile ? "mr-[16px]" : "mr-[24px]"}
             padding_x={25}
             padding_y={14}
-            disable={isNoColumns}
           />
           {/* Three dots dropdown menu button */}
           <button>

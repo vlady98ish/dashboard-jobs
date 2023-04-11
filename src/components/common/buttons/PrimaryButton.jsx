@@ -1,6 +1,6 @@
 import React from "react";
 
-const PrimaryButton = ({ text, margin, padding_x, padding_y, disable }) => {
+const PrimaryButton = ({ text, margin, padding_x, padding_y }) => {
   const normalStyle = `bg-main_purple rounded-[24px] ${margin} px-[${padding_x}px] py-[${padding_y}px]`;
   const hoverStyle = `hover:bg-main_purple_hover `;
   return (

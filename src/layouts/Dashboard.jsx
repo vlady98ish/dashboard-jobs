@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Sidebar from "../components/sidebar/Sidebar";
 import Header from "../components/header/Header";
-import Main from "../components/Main/Main";
+import Main from "../components/main/Main";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 
-import { getAllBoards } from "../utils/REST";
+import { getAllBoards } from "../utils/CRUD";
 import { setBoards, setIsLoading } from "../features/theme/boardSlice";
 
 const Dashboard = () => {
