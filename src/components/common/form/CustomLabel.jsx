@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CustomLabel = ({ htmlFor, text }) => {
-	const style = `block text-medium_grey lg:text-12 lg:leading-15 font-700`;
+	const style = `block text-medium_grey lg:text-12 lg:leading-15 font-700 dark:text-white`;
 	return (
 		<label htmlFor={htmlFor} className={style}>
 			{text}

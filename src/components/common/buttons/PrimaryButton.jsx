@@ -7,7 +7,7 @@ const PrimaryButton = ({
 	padding_y,
 	fullWidth = false
 }) => {
-	const normalStyle = `bg-main_purple rounded-[24px] ${margin} px-[${padding_x}px] py-[${padding_y}px] ${
+	const normalStyle = `bg-main_purple rounded-[24px] submit ${margin} px-[${padding_x}px] py-[${padding_y}px] ${
 		fullWidth && 'w-full'
 	}`;
 	const hoverStyle = `hover:bg-main_purple_hover `;
