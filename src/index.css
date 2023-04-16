@@ -22,16 +22,21 @@ body {
 * {
     margin: 0;
     padding: 0;
-    
+
     box-sizing: border-box;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 button,
-input,
 select,
 textarea {
     cursor: pointer;
+    color: inherit;
+    background-color: inherit;
+    transition: 0.3s;
+}
+
+input {
     color: inherit;
     background-color: inherit;
     transition: 0.3s;

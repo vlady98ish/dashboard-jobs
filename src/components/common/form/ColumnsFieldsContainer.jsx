@@ -3,10 +3,15 @@ import CustomLabel from './CustomLabel';
 
 import Column from './Column';
 
-const ColumnsFields = ({ columns, onColumnChange, register }) => {
+const ColumnsFieldsContainer = ({
+	title,
+	columns,
+	onColumnChange,
+	register
+}) => {
 	return (
 		<>
-			<CustomLabel text="Columns" />
+			<CustomLabel text={title} />
 			{columns.map((column) => (
 				<Column
 					column={column}
@@ -19,4 +24,4 @@ const ColumnsFields = ({ columns, onColumnChange, register }) => {
 	);
 };
 
-export default ColumnsFields;
+export default ColumnsFieldsContainer;

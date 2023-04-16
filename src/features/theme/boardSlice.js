@@ -15,7 +15,9 @@ const boardSlice = createSlice({
 			state.boardList = action.payload;
 		},
 		setSelectedBoard: (state, action) => {
-			state.selectedBoard = state.boardList[action.payload];
+			state.selectedBoard = state.boardList.find(
+				(board) => board.id === action.payload
+			);
 		},
 		setIsLoading: (state) => {
 			state.isLoading = !state.isLoading;

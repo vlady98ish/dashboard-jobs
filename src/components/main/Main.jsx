@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import EmptyBoard from './EmptyBoard';
 import { useSelector } from 'react-redux';
 import ShowSideBar from '../sidebar/ShowSideBar';

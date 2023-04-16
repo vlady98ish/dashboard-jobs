@@ -3,16 +3,17 @@ import Modal from 'react-modal';
 
 import AddEditForm from '../common/form/boards/AddEditForm';
 import { handleOverlayClick } from '../../utils/handler';
+import AddEditTask from '../common/form/tasks/AddEditTask';
 
-const AddNewBoardModal = ({ isOpen, onClose }) => {
-	const [columns, setColumns] = useState([{ id: 1 }]);
+const AddEditTaskModal = ({ isOpen, onClose }) => {
+	const [subTasks, setSubTasks] = useState([{ id: 1 }]);
 
 	const addColumn = (e) => {
 		e.preventDefault();
-		setColumns([...columns, { id: columns.length + 1 }]);
+		setSubTasks([...subTasks, { id: subTasks.length + 1 }]);
 	};
 	const deleteColumn = (id) => {
-		setColumns((prevState) => prevState.filter((column) => column.id !== id));
+		setSubTasks((prevState) => prevState.filter((task) => task.id !== id));
 	};
 
 	return (
@@ -25,10 +26,10 @@ const AddNewBoardModal = ({ isOpen, onClose }) => {
 		>
 			<div className="flex flex-col">
 				<h2 className="font-700 lg:text-18 lg:leading-23 dark:text-white ">
-					Add New Board
+					Add New Task
 				</h2>
-				<AddEditForm
-					columns={columns}
+				<AddEditTask
+					subTasks={subTasks}
 					onColumnChange={deleteColumn}
 					addColumn={addColumn}
 					closeModel={onClose}
@@ -38,4 +39,4 @@ const AddNewBoardModal = ({ isOpen, onClose }) => {
 	);
 };
 
-export default AddNewBoardModal;
+export default AddEditTaskModal;

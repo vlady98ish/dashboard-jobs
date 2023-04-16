@@ -7,10 +7,10 @@ const CreateNewBoard = ({ setIsOpen }) => {
 	return (
 		<div
 			className={`flex items-center justify-start gap-4
-         cursor-pointer py-[15px]  cursor-pointer py-[15px] lg:pl-8 pl-[24px] ${hoverStyle}`}
+         cursor-pointer py-[15px] py-[15px] lg:pl-8 pl-[24px] ${hoverStyle}`}
 			onClick={() => setIsOpen(true)}
 		>
-			<img src={IconBoardPurple} alt="icon-board" />
+			<img src={IconBoardPurple} alt="Icon Board" />
 			<span className="text-main_purple text-15 leading-19 font-700">
 				+ Create New Board
 			</span>

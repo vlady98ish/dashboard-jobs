@@ -10,12 +10,15 @@ import DropDownMenu from './DropDownMenu';
 import { useSelector } from 'react-redux';
 import DropDownEditDelete from './DropDownEditDelete';
 import DeleteModal from '../modals/DeleteModal';
+import AddEditTask from '../common/form/tasks/AddEditTask';
+import AddEditTaskModal from '../modals/AddEditTaskModal';
 
 const Header = ({ isMobile }) => {
 	const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 	const { selectedBoard } = useSelector((state) => state.boards);
 	const [isEditDeleteOpen, setIsEditDeleteOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
+	const [isOpenAddTask, setIsOpenAddTask] = useState(false);
 	return (
 		// Header container
 		<header className="w-full">
@@ -61,8 +64,10 @@ const Header = ({ isMobile }) => {
 							)
 						}
 						margin={isMobile ? 'mr-[16px]' : 'mr-[24px]'}
-						padding_x={25}
-						padding_y={14}
+						paddingX={25}
+						paddingY={14}
+						onClick={() => setIsOpenAddTask(!isOpenAddTask)}
+						disabled={selectedBoard === null}
 					/>
 					{/* Three dots dropdown menu button */}
 					<button onClick={() => setIsEditDeleteOpen(!isEditDeleteOpen)}>
@@ -77,7 +82,13 @@ const Header = ({ isMobile }) => {
 					}}
 				/>
 			</div>
-			{/* Header bottom line */}
+			<AddEditTaskModal
+				isOpen={isOpenAddTask}
+				onClose={() => {
+					setIsOpenAddTask(false);
+				}}
+			/>
+			{/*Header bottom line*/}
 			<div className="h-[1.5px] bg-lines_light dark:bg-lines_dark md:block" />
 		</header>
 	);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonDestructive = ({ text: text, fullWidth = false, onClick }) => {
+const ButtonDestructive = ({ text, fullWidth = false, onClick }) => {
 	const normalStyle = `bg-red rounded-[20px] text-white px-[8px] py-[8px] ${
 		fullWidth && 'w-full'
 	}`;

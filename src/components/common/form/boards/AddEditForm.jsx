@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import CustomLabel from './CustomLabel';
-import TextField from './TextField';
-import ColumnsFields from './ColumnsFields';
-import SecondaryButton from '../buttons/SecondaryButton';
-import PrimaryButton from '../buttons/PrimaryButton';
+import CustomLabel from '../CustomLabel';
+import TextField from '../TextField';
+import ColumnsFieldsContainer from '../ColumnsFieldsContainer';
+import SecondaryButton from '../../buttons/SecondaryButton';
+import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
-import { createBoard } from '../../../utils/CRUD';
+import { createBoard } from '../../../../utils/CRUD';
 import { useDispatch } from 'react-redux';
-import { createBoardForSlice } from '../../../features/theme/boardSlice';
-import { transformData } from '../../../utils/handler';
+import { createBoardForSlice } from '../../../../features/theme/boardSlice';
+import { transformData } from '../../../../utils/handler';
 
 const AddEditForm = ({
 	columns,
@@ -27,8 +27,8 @@ const AddEditForm = ({
 	} = formMethods;
 
 	const onSubmit = async (data) => {
-		await createBoard(data);
 		dispatch(createBoardForSlice(transformData(data)));
+		await createBoard(data);
 		closeModel();
 	};
 
@@ -48,7 +48,8 @@ const AddEditForm = ({
 				/>
 			</div>
 			<div className="mt-[24px]">
-				<ColumnsFields
+				<ColumnsFieldsContainer
+					title="Columns"
 					columns={columns}
 					onColumnChange={deleteColumn}
 					register={register}
@@ -63,7 +64,7 @@ const AddEditForm = ({
 				text="Create New Board"
 				fullWidth={true}
 				margin="mt-[24px]"
-				padding_y={9}
+				paddingY={9}
 			/>
 		</form>
 	);

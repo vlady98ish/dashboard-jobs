@@ -1,4 +1,4 @@
-import ThemeSwitcher from '../common/ThemeSwitcher';
+import ThemeToggle from '../common/ThemeToggle';
 //Components
 import Logo from './Logo';
 import BoardItems from '../common/BoardItems';
@@ -50,7 +50,7 @@ const Sidebar = () => {
 				/>
 			</div>
 			<div className=" ">
-				<ThemeSwitcher padding="pl-[64px] pr-[66px] py-[14px]" />
+				<ThemeToggle padding="pl-[64px] pr-[66px] py-[14px]" />
 				{/*TODO: add an animation for hiding sidebar.*/}
 				<HideSidebar />
 			</div>

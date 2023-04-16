@@ -3,13 +3,13 @@ import TextField from './TextField';
 import CancelIcon from '../../../assets/icon-cross.svg';
 
 const Column = ({ column, onColumnChange, register }) => {
-	const { id } = column;
+	const { id: columnId } = column;
 	return (
 		<div className="flex items-center">
 			<TextField
 				type="text"
-				id={`column${id}`}
-				name={`column${id}`}
+				id={`column${columnId}`}
+				name={`column${columnId}`}
 				placeholder="e.g. Todo"
 				register={register}
 				required={false}
@@ -17,7 +17,7 @@ const Column = ({ column, onColumnChange, register }) => {
 			<button
 				type="button"
 				className="ml-[16px] mt-[12px] inline"
-				onClick={() => onColumnChange(id)}
+				onClick={() => onColumnChange(columnId)}
 			>
 				<img src={CancelIcon} alt="Delete Input Field" />
 			</button>

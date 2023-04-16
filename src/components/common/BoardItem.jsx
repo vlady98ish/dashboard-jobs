@@ -23,7 +23,7 @@ const BoardItem = ({ board, id }) => {
 			className={`flex items-center text-medium_grey justify-start gap-5 lg:pl-8  cursor-pointer py-[15px] pl-[24px] ${
 				active ? `${activeStyle}` : `${hoverStyle}`
 			}`}
-			onClick={() => handleClick(dispatch, id - 1)}
+			onClick={() => handleClick(dispatch, id)}
 		>
 			{/* Displaying board icon based on selected status */}
 			<img

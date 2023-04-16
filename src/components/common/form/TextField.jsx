@@ -5,7 +5,7 @@ const TextField = ({
 	id,
 	name,
 	placeholder,
-	onChange: handleChange,
+	onChange: onInputChange,
 	register,
 	required,
 	errors
@@ -23,7 +23,7 @@ const TextField = ({
 				placeholder={placeholder}
 				{...register(name, { required })}
 				className={style}
-				onChange={handleChange}
+				onChange={onInputChange}
 			/>
 			{errors && errors[name] && (
 				<div className="absolute inset-y-0 right-4 transform translate-y-1/2 top-[-12px]">
