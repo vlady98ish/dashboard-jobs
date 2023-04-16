@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-
-import AddEditForm from '../common/form/boards/AddEditForm';
 import { handleOverlayClick } from '../../utils/handler';
 import AddEditTask from '../common/form/tasks/AddEditTask';
 

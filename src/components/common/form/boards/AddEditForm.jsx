@@ -5,10 +5,10 @@ import ColumnsFieldsContainer from '../ColumnsFieldsContainer';
 import SecondaryButton from '../../buttons/SecondaryButton';
 import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
-import { createBoard } from '../../../../utils/CRUD';
+import { createBoard } from '../../../../utils/Api';
 import { useDispatch } from 'react-redux';
 import { createBoardForSlice } from '../../../../features/theme/boardSlice';
-import { transformData } from '../../../../utils/handler';
+import { transformDataColumn } from '../../../../utils/helper';
 
 const AddEditForm = ({
 	columns,
@@ -27,7 +27,7 @@ const AddEditForm = ({
 	} = formMethods;
 
 	const onSubmit = async (data) => {
-		dispatch(createBoardForSlice(transformData(data)));
+		dispatch(createBoardForSlice(transformDataColumn(data)));
 		await createBoard(data);
 		closeModel();
 	};

@@ -5,12 +5,11 @@ import ColumnsFieldsContainer from '../ColumnsFieldsContainer';
 import SecondaryButton from '../../buttons/SecondaryButton';
 import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
-import { createBoard } from '../../../../utils/CRUD';
-import { useDispatch } from 'react-redux';
-import { createBoardForSlice } from '../../../../features/theme/boardSlice';
-import { transformData } from '../../../../utils/handler';
+import { useDispatch, useSelector } from 'react-redux';
 import Description from './Description';
 import StatusField from './StatusField';
+import { dataToJsonTask } from '../../../../utils/helper';
+import { addTask } from '../../../../utils/Api';
 
 const AddEditTask = ({
 	subTasks,
@@ -22,6 +21,7 @@ const AddEditTask = ({
 	const formMethods = useForm();
 	const [name, setName] = useState('');
 	const handleChange = ({ target: { value } }) => setName(value);
+	const { selectedBoard } = useSelector((state) => state.boards);
 	const {
 		register,
 		handleSubmit,
@@ -29,8 +29,9 @@ const AddEditTask = ({
 	} = formMethods;
 
 	const onSubmit = async (data) => {
-		dispatch(createBoardForSlice(transformData(data)));
-		await createBoard(data);
+		await addTask(selectedBoard.id, dataToJsonTask(data));
+		// dispatch(createBoardForSlice(transformData(data)));
+
 		closeModel();
 	};
 
@@ -50,7 +51,7 @@ const AddEditTask = ({
 				/>
 			</div>
 			<div className="mt-[24px]">
-				<Description />
+				<Description register={register} />
 			</div>
 			<div className="mt-[24px]">
 				<ColumnsFieldsContainer
@@ -66,7 +67,7 @@ const AddEditTask = ({
 				onClick={addColumn}
 			/>
 			<div className="mt-[24px]">
-				<StatusField />
+				<StatusField register={register} />
 			</div>
 
 			<PrimaryButton

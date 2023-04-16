@@ -28,15 +28,14 @@ body {
 }
 
 button,
-select,
-textarea {
+select {
     cursor: pointer;
     color: inherit;
     background-color: inherit;
     transition: 0.3s;
 }
 
-input {
+input, textarea {
     color: inherit;
     background-color: inherit;
     transition: 0.3s;

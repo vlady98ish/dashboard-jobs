@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
 	boardList: [],
@@ -30,6 +30,10 @@ const boardSlice = createSlice({
 				(board) => board.id !== action.payload
 			);
 			state.selectedBoard = null;
+		},
+		addTaskToColumn: (state, action) => {
+		
+		
 		}
 	}
 });

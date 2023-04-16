@@ -5,10 +5,15 @@ const TextFieldWithDropdown = ({ options, value, onChange, register }) => {
 	py-[8px] px-[16px] mt-[12px] font-500  text-12 leading-23 placeholder:text-black  dark:placeholder:text-white`;
 	return (
 		<div className="w-full">
-			<select value={value} onChange={onChange} className={style}>
-				{options.map((option) => (
+			<select
+				value={value}
+				onChange={onChange}
+				className={style}
+				{...register('status')}
+			>
+				{options.map((option, index) => (
 					<option
-						key={option.value}
+						key={index}
 						value={option.value}
 						className="text-medium_grey dark:bg-very_dark_grey"
 					>

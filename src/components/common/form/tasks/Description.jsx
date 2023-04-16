@@ -2,11 +2,11 @@ import React from 'react';
 import CustomLabel from '../CustomLabel';
 import DescriptionTextArea from './DescriptionTextArea';
 
-const Description = () => {
+const Description = ({ register }) => {
 	return (
 		<div>
 			<CustomLabel text="Description" />
-			<DescriptionTextArea />
+			<DescriptionTextArea register={register} />
 		</div>
 	);
 };

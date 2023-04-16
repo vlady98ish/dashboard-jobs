@@ -5,7 +5,7 @@ import Main from '../components/main/Main';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 
-import { getAllBoards } from '../utils/CRUD';
+import { getAllBoards } from '../utils/Api';
 import { setBoards, setIsLoading } from '../features/theme/boardSlice';
 
 const Dashboard = () => {

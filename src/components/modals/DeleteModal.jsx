@@ -4,7 +4,7 @@ import ButtonDestructive from '../common/buttons/ButtonDestructive';
 import SecondaryButton from '../common/buttons/SecondaryButton';
 import { handleOverlayClick } from '../../utils/handler';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteBoard } from '../../utils/CRUD';
+import { deleteBoard } from '../../utils/Api';
 import { deleteBoardFromSlice } from '../../features/theme/boardSlice';
 
 const DeleteModal = ({ isOpen, onClose }) => {
