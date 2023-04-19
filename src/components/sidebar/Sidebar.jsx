@@ -47,6 +47,7 @@ const Sidebar = () => {
 					onClose={() => {
 						setIsOpen(false);
 					}}
+					title="Add New Board"
 				/>
 			</div>
 			<div className=" ">

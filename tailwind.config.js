@@ -50,7 +50,8 @@ module.exports = {
 			border_input: 'rgba(130, 143, 163, 0.25)'
 		},
 		boxShadow: {
-			drop: '0px 10px 20px rgba(54, 78, 126, 0.25)'
+			drop: '0px 10px 20px rgba(54, 78, 126, 0.25)',
+			task: '0px 10px 20px rgba(54, 78, 126, 0.101545)'
 		},
 		extend: {}
 	},

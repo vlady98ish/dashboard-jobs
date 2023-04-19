@@ -1,6 +1,12 @@
 import React from 'react';
 
-const TextFieldWithDropdown = ({ options, value, onChange, register }) => {
+const TextFieldWithDropdown = ({
+	options,
+	value,
+	onChange,
+	register = null
+}) => {
+	const selectProps = register ? { ...register('status') } : {};
 	const style = `border  border-opacity-25 rounded-[4px] w-full border-medium_grey
 	py-[8px] px-[16px] mt-[12px] font-500  text-12 leading-23 placeholder:text-black  dark:placeholder:text-white`;
 	return (
@@ -9,7 +15,7 @@ const TextFieldWithDropdown = ({ options, value, onChange, register }) => {
 				value={value}
 				onChange={onChange}
 				className={style}
-				{...register('status')}
+				{...selectProps}
 			>
 				{options.map((option, index) => (
 					<option

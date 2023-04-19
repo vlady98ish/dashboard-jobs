@@ -7,6 +7,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import { getAllBoards } from '../utils/Api';
 import { setBoards, setIsLoading } from '../features/theme/boardSlice';
+import { showToastMessage } from '../utils/helper';
+import { ERROR } from '../utils/constant';
 
 const Dashboard = () => {
 	// Initialize Redux dispatch and state
@@ -26,7 +28,7 @@ const Dashboard = () => {
 			.then((data) => {
 				dispatch(setBoards(data));
 			})
-			.catch((error) => console.error(error));
+			.catch((error) => showToastMessage(ERROR, error));
 	}, [dispatch]);
 
 	return (

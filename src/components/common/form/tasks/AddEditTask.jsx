@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CustomLabel from '../CustomLabel';
 import TextField from '../TextField';
 import ColumnsFieldsContainer from '../ColumnsFieldsContainer';
@@ -19,8 +19,6 @@ const AddEditTask = ({
 }) => {
 	const dispatch = useDispatch();
 	const formMethods = useForm();
-	const [name, setName] = useState('');
-	const handleChange = ({ target: { value } }) => setName(value);
 	const { selectedBoard } = useSelector((state) => state.boards);
 	const {
 		register,
@@ -44,7 +42,6 @@ const AddEditTask = ({
 					id="titleBoard"
 					name="name"
 					placeholder="e.g Take coffee break"
-					onChange={handleChange}
 					register={register}
 					required={true}
 					errors={errors}

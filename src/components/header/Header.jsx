@@ -10,8 +10,8 @@ import DropDownMenu from './DropDownMenu';
 import { useSelector } from 'react-redux';
 import DropDownEditDelete from './DropDownEditDelete';
 import DeleteModal from '../modals/DeleteModal';
-import AddEditTask from '../common/form/tasks/AddEditTask';
 import AddEditTaskModal from '../modals/AddEditTaskModal';
+import DropMenuButton from '../common/buttons/DropMenuButton';
 
 const Header = ({ isMobile }) => {
 	const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -70,10 +70,11 @@ const Header = ({ isMobile }) => {
 						disabled={selectedBoard === null}
 					/>
 					{/* Three dots dropdown menu button */}
-					<button onClick={() => setIsEditDeleteOpen(!isEditDeleteOpen)}>
-						<img src={ThreeDots} alt="Three Dots Drop Down Menu" />
-						{isEditDeleteOpen && <DropDownEditDelete setIsOpen={setIsOpen} />}
-					</button>
+					<DropMenuButton
+						setIsOpen={setIsOpen}
+						isEditDeleteOpen={isEditDeleteOpen}
+						setIsEditDeleteOpen={setIsEditDeleteOpen}
+					/>
 				</div>
 				<DeleteModal
 					isOpen={isOpen}

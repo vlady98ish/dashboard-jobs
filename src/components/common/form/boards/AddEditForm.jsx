@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CustomLabel from '../CustomLabel';
 import TextField from '../TextField';
 import ColumnsFieldsContainer from '../ColumnsFieldsContainer';
@@ -6,9 +6,13 @@ import SecondaryButton from '../../buttons/SecondaryButton';
 import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
 import { createBoard } from '../../../../utils/Api';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createBoardForSlice } from '../../../../features/theme/boardSlice';
-import { transformDataColumn } from '../../../../utils/helper';
+import {
+	showToastMessage,
+	transformDataColumn
+} from '../../../../utils/helper';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddEditForm = ({
 	columns,
@@ -18,8 +22,6 @@ const AddEditForm = ({
 }) => {
 	const dispatch = useDispatch();
 	const formMethods = useForm();
-	const [name, setName] = useState('');
-	const handleChange = ({ target: { value } }) => setName(value);
 	const {
 		register,
 		handleSubmit,
@@ -27,8 +29,9 @@ const AddEditForm = ({
 	} = formMethods;
 
 	const onSubmit = async (data) => {
-		dispatch(createBoardForSlice(transformDataColumn(data)));
-		await createBoard(data);
+		const transformData = transformDataColumn(data);
+		dispatch(createBoardForSlice(transformData));
+		await createBoard(transformData);
 		closeModel();
 	};
 
@@ -41,7 +44,6 @@ const AddEditForm = ({
 					id="nameBoard"
 					name="name"
 					placeholder="e.g Web Design"
-					onChange={handleChange}
 					register={register}
 					required={true}
 					errors={errors}
