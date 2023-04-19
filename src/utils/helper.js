@@ -19,7 +19,8 @@ export const transformDataColumn = (data) => {
 				name: data[key],
 				tasks: []
 			};
-		});
+		})
+		.filter((column) => column.name !== '');
 	return {
 		id,
 		name,

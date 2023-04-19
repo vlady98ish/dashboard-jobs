@@ -5,7 +5,7 @@ import ColumnsFieldsContainer from '../ColumnsFieldsContainer';
 import SecondaryButton from '../../buttons/SecondaryButton';
 import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Description from './Description';
 import StatusField from './StatusField';
 import { dataToJsonTask } from '../../../../utils/helper';
@@ -17,7 +17,6 @@ const AddEditTask = ({
 	onColumnChange: deleteColumn,
 	closeModel
 }) => {
-	const dispatch = useDispatch();
 	const formMethods = useForm();
 	const { selectedBoard } = useSelector((state) => state.boards);
 	const {

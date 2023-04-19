@@ -6,19 +6,17 @@ import SecondaryButton from '../../buttons/SecondaryButton';
 import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
 import { createBoard } from '../../../../utils/Api';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createBoardForSlice } from '../../../../features/theme/boardSlice';
-import {
-	showToastMessage,
-	transformDataColumn
-} from '../../../../utils/helper';
+import { transformDataColumn } from '../../../../utils/helper';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddEditForm = ({
 	columns,
 	addColumn,
 	onColumnChange: deleteColumn,
-	closeModel
+	closeModel,
+	editForm = false
 }) => {
 	const dispatch = useDispatch();
 	const formMethods = useForm();
@@ -47,6 +45,7 @@ const AddEditForm = ({
 					register={register}
 					required={true}
 					errors={errors}
+					value={editForm && columns.name}
 				/>
 			</div>
 			<div className="mt-[24px]">

@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import AddEditForm from '../common/form/boards/AddEditForm';
 import ModalWrapper from './ModalWrapper';
+import { useSelector } from 'react-redux';
 
-const AddNewBoardModal = ({ isOpen, onClose, title }) => {
+const AddNewBoardModal = ({ isOpen, onClose, title, typeEdit = false }) => {
 	const [columns, setColumns] = useState([{ id: 1 }]);
-
+	const selectedBoard = useSelector((state) => state.boards.selectedBoard);
 	const addColumn = useCallback(
 		(e) => {
 			e.preventDefault();
@@ -22,10 +23,11 @@ const AddNewBoardModal = ({ isOpen, onClose, title }) => {
 				{title}
 			</h2>
 			<AddEditForm
-				columns={columns}
+				columns={typeEdit ? selectedBoard.columns : columns}
 				onColumnChange={deleteColumn}
 				addColumn={addColumn}
 				closeModel={onClose}
+				editForm={typeEdit}
 			/>
 		</ModalWrapper>
 	);

@@ -16,7 +16,7 @@ const DeleteModal = ({ isOpen, onClose }) => {
 			dispatch(deleteBoardFromSlice(id));
 			onClose();
 		},
-		[dispatch]
+		[dispatch, onClose]
 	);
 	return (
 		<ModalWrapper isOpen={isOpen} onClose={onClose} title="Delete this board?">

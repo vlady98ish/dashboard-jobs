@@ -170,6 +170,16 @@
         }
       ],
       "id": 4
+    },
+    {
+      "id": "068eb827-e89f-4e76-a472-855fb57ac79b",
+      "name": "Clean",
+      "columns": [
+        {
+          "name": "qwe",
+          "tasks": []
+        }
+      ]
     }
   ]
 }

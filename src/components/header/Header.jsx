@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ThreeDots from '../../assets/icon-vertical-ellipsis.svg';
+
 import PrimaryButton from '../common/buttons/PrimaryButton';
 
 import MobileLogo from '../../assets/logo-mobile.svg';
@@ -8,7 +8,7 @@ import ArrowDown from '../../assets/icon-chevron-down.svg';
 import ArrowUp from '../../assets/icon-chevron-up.svg';
 import DropDownMenu from './DropDownMenu';
 import { useSelector } from 'react-redux';
-import DropDownEditDelete from './DropDownEditDelete';
+
 import DeleteModal from '../modals/DeleteModal';
 import AddEditTaskModal from '../modals/AddEditTaskModal';
 import DropMenuButton from '../common/buttons/DropMenuButton';

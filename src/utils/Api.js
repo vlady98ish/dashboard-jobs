@@ -18,7 +18,7 @@ export const createBoard = async (data) => {
 			},
 			body: JSON.stringify(data)
 		});
-		const resultRes = await response.json();
+		await response.json();
 		showToastMessage(SUCCESS, 'Board was created');
 	} catch (error) {
 		showToastMessage(ERROR, `Board didnt created ${error}`);
