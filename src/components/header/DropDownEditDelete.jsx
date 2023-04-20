@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DropDownEditDelete = ({ setIsOpen }) => {
+const DropDownEditDelete = ({ setIsOpen, setEditModalOpen }) => {
 	return (
 		<div className="relative">
 			<ul
@@ -8,7 +8,9 @@ const DropDownEditDelete = ({ setIsOpen }) => {
 				font-500 text-12 leading-23  py-[16px] gap-[16px] pl-[16px] pr-[] w-[192px] dark:bg-very_dark_grey
 			"
 			>
-				<li className="text-medium_grey">Edit Board</li>
+				<li className="text-medium_grey" onClick={() => setEditModalOpen(true)}>
+					Edit Board
+				</li>
 				<li className="text-red" onClick={() => setIsOpen(true)}>
 					Delete Board
 				</li>

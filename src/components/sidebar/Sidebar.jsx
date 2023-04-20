@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import HideSidebar from './HideSidebar';
 import CreateNewBoard from '../common/CreateNewBoard';
 import { useState } from 'react';
-import AddNewBoardModal from '../modals/AddNewBoardModal';
+import AddEditBoardModal from '../modals/AddEditBoardModal';
 
 const Sidebar = () => {
 	const { boardList } = useSelector((state) => state.boards);
@@ -42,7 +42,7 @@ const Sidebar = () => {
 				)}
 				{/* Render button to create new board */}
 				<CreateNewBoard setIsOpen={setIsOpen} />
-				<AddNewBoardModal
+				<AddEditBoardModal
 					isOpen={isOpen}
 					onClose={() => {
 						setIsOpen(false);

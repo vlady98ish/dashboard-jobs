@@ -2,12 +2,14 @@ import React from 'react';
 import CustomLabel from './CustomLabel';
 
 import Column from './Column';
+import { v4 } from 'uuid';
 
 const ColumnsFieldsContainer = ({
 	title,
 	columns,
 	onColumnChange,
-	register
+	register,
+	unregister
 }) => {
 	return (
 		<>
@@ -15,9 +17,10 @@ const ColumnsFieldsContainer = ({
 			{columns.map((column) => (
 				<Column
 					column={column}
-					key={column.id}
+					key={v4()}
 					onColumnChange={onColumnChange}
 					register={register}
+					unregister={unregister}
 				/>
 			))}
 		</>

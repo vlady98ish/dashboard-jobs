@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import EmptyBoard from './EmptyBoard';
 import { useSelector } from 'react-redux';
 import ShowSideBar from '../sidebar/ShowSideBar';
-import AddNewBoardModal from '../modals/AddNewBoardModal';
+import AddEditBoardModal from '../modals/AddEditBoardModal';
 
 import TaskColumnWrapper from './tasks/TaskColumnWrapper';
 import TaskInfoModal from '../modals/TaskInfoModal';
@@ -31,7 +31,7 @@ const Main = ({ isMobile }) => {
 				/>
 			)}
 
-			<AddNewBoardModal
+			<AddEditBoardModal
 				isOpen={isOpen}
 				onClose={() => setIsOpen(!isOpen)}
 				title="Add New Board"

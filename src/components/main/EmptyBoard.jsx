@@ -1,6 +1,6 @@
 import React from 'react';
 import PrimaryButton from '../common/buttons/PrimaryButton';
-import AddNewBoardModal from '../modals/AddNewBoardModal';
+import AddEditBoardModal from '../modals/AddEditBoardModal';
 import { useState } from 'react';
 
 const EmptyBoard = ({ isMobile }) => {
@@ -22,7 +22,7 @@ const EmptyBoard = ({ isMobile }) => {
 					onClick={setEditIsOpen}
 				/>
 			</div>
-			<AddNewBoardModal
+			<AddEditBoardModal
 				isOpen={editIsOpen}
 				onClose={() => setEditIsOpen(false)}
 				title="Edit Board"

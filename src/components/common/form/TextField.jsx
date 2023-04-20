@@ -8,7 +8,8 @@ const TextField = ({
 	onChange: onInputChange,
 	register,
 	required,
-	errors
+	errors,
+	value
 }) => {
 	const style = `border ${
 		errors && errors[name] && `border-red border-opacity-100 focus:outline-red`
@@ -24,6 +25,7 @@ const TextField = ({
 				{...register(name, { required })}
 				className={style}
 				onChange={onInputChange}
+				defaultValue={value}
 			/>
 			{errors && errors[name] && (
 				<div className="absolute inset-y-0 right-4 transform translate-y-1/2 top-[-12px]">

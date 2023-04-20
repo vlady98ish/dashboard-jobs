@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	boardList: [],
@@ -22,8 +22,17 @@ const boardSlice = createSlice({
 		setIsLoading: (state) => {
 			state.isLoading = !state.isLoading;
 		},
-		createBoardForSlice: (state, action) => {
+		addBoard: (state, action) => {
 			state.boardList = [...state.boardList, action.payload];
+		},
+		editBoard: (state, action) => {
+			const board = action.payload;
+			const boardForUpdate = state.boardList.find(
+				(board) => board.id === state.selectedBoard.id
+			);
+			boardForUpdate.name = board.name;
+			boardForUpdate.columns = board.columns;
+			state.selectedBoard = boardForUpdate;
 		},
 		deleteBoardFromSlice: (state, action) => {
 			state.boardList = state.boardList.filter(
@@ -31,10 +40,7 @@ const boardSlice = createSlice({
 			);
 			state.selectedBoard = null;
 		},
-		addTaskToColumn: (state, action) => {
-		
-		
-		}
+		addTaskToColumn: (state, action) => {}
 	}
 });
 
@@ -42,9 +48,9 @@ export const {
 	setBoards,
 	setSelectedBoard,
 	setIsLoading,
-	getSelectedBoard,
 	deleteBoardFromSlice,
-	createBoardForSlice
+	addBoard,
+	editBoard
 } = boardSlice.actions;
 
 export default boardSlice.reducer;

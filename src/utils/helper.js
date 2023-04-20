@@ -28,6 +28,45 @@ export const transformDataColumn = (data) => {
 	};
 };
 
+export const updateSelectedBoard = (data, board) => {
+	let columns = Object.keys(data)
+		.filter((key) => key.startsWith('column'))
+		.map((key) => {
+			return {
+				name: data[key]
+			};
+		});
+	let updatedBoard = JSON.parse(JSON.stringify(board));
+	let boardColumns = updatedBoard.columns;
+	let columnsName = columns.map((column) => column.name);
+	// Case 1: columns size == boardColumns size
+	if (columns.length === boardColumns.length) {
+		boardColumns.forEach((column, index) => {
+			column.name = columnsName[index];
+		});
+	}
+
+	// Case 2: columns size < boardColumns size
+	else if (columns.length < boardColumns.length) {
+		boardColumns.forEach((column, index) => {
+			column.name = columnsName[index];
+		});
+		boardColumns.splice(columns.length);
+	}
+
+	// Case 3: columns size > boardColumns size
+	else {
+		columns.forEach((column, index) => {
+			if (index < boardColumns.length) {
+				boardColumns[index].name = column.name;
+			} else {
+				boardColumns.push({ name: column.name, tasks: [] });
+			}
+		});
+	}
+	return updatedBoard;
+};
+
 export const findColumnForName = (board, columnName) => {
 	return board.columns.find((column) => column.name === columnName);
 };

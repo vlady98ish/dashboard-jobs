@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import DeleteModal from '../modals/DeleteModal';
 import AddEditTaskModal from '../modals/AddEditTaskModal';
 import DropMenuButton from '../common/buttons/DropMenuButton';
+import AddEditBoardModal from '../modals/AddEditBoardModal';
 
 const Header = ({ isMobile }) => {
 	const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -19,6 +20,8 @@ const Header = ({ isMobile }) => {
 	const [isEditDeleteOpen, setIsEditDeleteOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpenAddTask, setIsOpenAddTask] = useState(false);
+	const [editModalOpen, setIsEditModalOpen] = useState(false);
+
 	return (
 		// Header container
 		<header className="w-full">
@@ -74,6 +77,7 @@ const Header = ({ isMobile }) => {
 						setIsOpen={setIsOpen}
 						isEditDeleteOpen={isEditDeleteOpen}
 						setIsEditDeleteOpen={setIsEditDeleteOpen}
+						setEditModalOpen={setIsEditModalOpen}
 					/>
 				</div>
 				<DeleteModal
@@ -81,6 +85,14 @@ const Header = ({ isMobile }) => {
 					onClose={() => {
 						setIsOpen(false);
 					}}
+				/>
+				<AddEditBoardModal
+					isOpen={editModalOpen}
+					onClose={() => {
+						setIsEditModalOpen(false);
+					}}
+					title="Edit Board"
+					typeEdit={true}
 				/>
 			</div>
 			<AddEditTaskModal
