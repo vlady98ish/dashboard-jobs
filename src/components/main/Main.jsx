@@ -15,7 +15,7 @@ const Main = ({ isMobile }) => {
 
 	return (
 		<main
-			className={`bg-light_grey h-full  dark:bg-very_dark_grey relative pl-[20px] pt-[24px]
+			className={`bg-light_grey h-full  dark:bg-very_dark_grey relative pl-[20px] pt-[24px] pb-[50px]
 			`}
 		>
 			{!selectedBoard ? (
