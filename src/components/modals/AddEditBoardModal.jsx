@@ -29,7 +29,7 @@ const AddEditBoardModal = ({ isOpen, onClose, title, typeEdit = false }) => {
 				})
 			);
 		}
-	}, [selectedBoard]);
+	}, [selectedBoard, typeEdit]);
 
 	useEffect(() => {
 		updateColumns();

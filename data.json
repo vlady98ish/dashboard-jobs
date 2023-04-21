@@ -106,35 +106,21 @@
         },
         {
           "name": "Later",
-          "tasks": []
-        }
-      ]
-    },
-    {
-      "name": "Vladyslav",
-      "columns": [
-        {
-          "name": "Next",
           "tasks": [
             {
-              "title": "Cofee Break",
-              "description": "rtrtrtrtrtrtrt",
-              "status": "Next",
+              "title": "Clean",
+              "description": "qwe",
+              "status": "Later",
               "subtasks": [
                 {
-                  "title": "Drink Cofee",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Drink Tea",
+                  "title": "Todo",
                   "isCompleted": false
                 }
               ]
             }
           ]
         }
-      ],
-      "id": 4
+      ]
     },
     {
       "id": "068eb827-e89f-4e76-a472-855fb57ac79b",
@@ -142,6 +128,44 @@
       "columns": [
         {
           "name": "qwe",
+          "tasks": []
+        }
+      ]
+    },
+    {
+      "id": "48ede3ba-d881-4422-836b-40db3f5c0620",
+      "name": "Vladyslav",
+      "columns": [
+        {
+          "name": "qwe",
+          "tasks": []
+        },
+        {
+          "name": "ewq",
+          "tasks": [
+            {
+              "title": "Clean",
+              "description": "qweqweqweqweqw",
+              "status": "ewq",
+              "subtasks": [
+                {
+                  "title": "qwe",
+                  "isCompleted": false
+                },
+                {
+                  "title": "asd",
+                  "isCompleted": false
+                },
+                {
+                  "title": "dsa",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "asd",
           "tasks": []
         }
       ]

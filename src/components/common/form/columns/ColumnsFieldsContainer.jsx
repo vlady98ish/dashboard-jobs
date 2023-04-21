@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomLabel from './CustomLabel';
+import CustomLabel from '../CustomLabel';
 
 import Column from './Column';
 import { v4 } from 'uuid';

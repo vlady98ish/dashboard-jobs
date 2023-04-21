@@ -101,5 +101,8 @@ export const showToastMessage = (status, message) => {
 			toast.error(message, {
 				position: toast.POSITION.TOP_RIGHT
 			});
+			break;
+		default:
+			return;
 	}
 };

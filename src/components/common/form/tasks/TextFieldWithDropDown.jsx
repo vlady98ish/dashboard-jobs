@@ -2,9 +2,9 @@ import React from 'react';
 
 const TextFieldWithDropdown = ({
 	options,
-	value,
 	onChange,
-	register = null
+	register = null,
+	defaultValue
 }) => {
 	const selectProps = register ? { ...register('status') } : {};
 	const style = `border  border-opacity-25 rounded-[4px] w-full border-medium_grey
@@ -12,7 +12,7 @@ const TextFieldWithDropdown = ({
 	return (
 		<div className="w-full">
 			<select
-				value={value}
+				defaultValue={defaultValue}
 				onChange={onChange}
 				className={style}
 				{...selectProps}

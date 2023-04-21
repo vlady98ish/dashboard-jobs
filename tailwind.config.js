@@ -49,6 +49,11 @@ module.exports = {
 			'red-hover': '#FF9898',
 			border_input: 'rgba(130, 143, 163, 0.25)'
 		},
+		backgroundImage: {
+			add_column_light: 'linear-gradient(180deg,#e9effa,rgba(233,239,250,.5));',
+			add_column_dark:
+				'linear-gradient(180deg, rgba(43, 44, 55, 0.25) 0%, rgba(43, 44, 55, 0.125) 100%);'
+		},
 		boxShadow: {
 			drop: '0px 10px 20px rgba(54, 78, 126, 0.25)',
 			task: '0px 10px 20px rgba(54, 78, 126, 0.101545)'

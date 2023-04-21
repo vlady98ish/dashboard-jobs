@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomLabel from '../CustomLabel';
 import TextField from '../TextField';
-import ColumnsFieldsContainer from '../ColumnsFieldsContainer';
+import ColumnsFieldsContainer from '../columns/ColumnsFieldsContainer';
 import SecondaryButton from '../../buttons/SecondaryButton';
 import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';

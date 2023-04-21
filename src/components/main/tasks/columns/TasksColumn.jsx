@@ -1,6 +1,6 @@
 import React from 'react';
-import Task from './Task';
-import StatusTask from './StatusTask';
+import Task from '../Task';
+import StatusTask from '../StatusTask';
 import { v4 } from 'uuid';
 
 const TasksColumn = ({ column, setOpen }) => {

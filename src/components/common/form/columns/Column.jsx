@@ -1,6 +1,6 @@
 import React from 'react';
-import TextField from './TextField';
-import CancelIcon from '../../../assets/icon-cross.svg';
+import TextField from '../TextField';
+import CancelIcon from '../../../../assets/icon-cross.svg';
 
 const Column = ({ column, onColumnChange, register, unregister }) => {
 	return (

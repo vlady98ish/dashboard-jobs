@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
 	boardList: [],
 	selectedBoard: null,
-	jobList: [],
+	selectedTask: {},
 	isLoading: false
 };
 
@@ -21,6 +21,9 @@ const boardSlice = createSlice({
 		},
 		setIsLoading: (state) => {
 			state.isLoading = !state.isLoading;
+		},
+		setSelectedTask: (state, action) => {
+			state.selectedTask = action.payload;
 		},
 		addBoard: (state, action) => {
 			state.boardList = [...state.boardList, action.payload];
@@ -50,7 +53,8 @@ export const {
 	setIsLoading,
 	deleteBoardFromSlice,
 	addBoard,
-	editBoard
+	editBoard,
+	setSelectedTask
 } = boardSlice.actions;
 
 export default boardSlice.reducer;

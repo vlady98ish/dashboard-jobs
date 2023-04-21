@@ -10,7 +10,7 @@ const StatusField = ({ register }) => {
 			<CustomLabel text="Status" />
 			<TextFieldWithDropdown
 				options={columns}
-				value={columns[0]}
+				defaultValue={columns[0]}
 				register={register}
 			/>
 		</div>

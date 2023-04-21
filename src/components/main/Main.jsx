@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import ShowSideBar from '../sidebar/ShowSideBar';
 import AddEditBoardModal from '../modals/AddEditBoardModal';
 
-import TaskColumnWrapper from './tasks/TaskColumnWrapper';
+import TaskColumnWrapper from './tasks/columns/TaskColumnWrapper';
 import TaskInfoModal from '../modals/TaskInfoModal';
 
 const Main = ({ isMobile }) => {
@@ -25,9 +25,11 @@ const Main = ({ isMobile }) => {
 					<EmptyBoard isMobile={isMobile} />
 				</>
 			) : (
+				//TODO: Edit for edit Modal!
 				<TaskColumnWrapper
 					columns={selectedBoard.columns}
 					setOpen={setTaskIsOpen}
+					setOpenEditModal={setIsOpen}
 				/>
 			)}
 
