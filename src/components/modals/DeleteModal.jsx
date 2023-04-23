@@ -24,11 +24,14 @@ const DeleteModal = ({
 		},
 		[dispatch, onClose]
 	);
-	const handleDeleteTask = useCallback(async (task, board) => {
-		await deleteTask(task, board);
-		closeTaskInfoModel(false);
-		onClose();
-	}, []);
+	const handleDeleteTask = useCallback(
+		async (task, board) => {
+			await deleteTask(task, board);
+			closeTaskInfoModel(false);
+			onClose();
+		},
+		[onClose]
+	);
 	return (
 		<ModalWrapper isOpen={isOpen} onClose={onClose} title="Delete this board?">
 			<div className="flex flex-col gap-[24px] z-500000">

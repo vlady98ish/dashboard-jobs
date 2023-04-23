@@ -11,16 +11,16 @@ const DropMenuButton = ({
 	titles
 }) => {
 	const { selectedBoard } = useSelector((state) => state.boards);
-
+	const handleClick = () => {
+		if (selectedBoard) {
+			setIsEditDeleteOpen(!isEditDeleteOpen);
+		}
+	};
 	return (
 		<button
 			className="flex-shrink-0"
-			onClick={() => {
-				if (selectedBoard) {
-					setIsEditDeleteOpen(!isEditDeleteOpen);
-				}
-			}}
-			disabled={selectedBoard === null}
+			onClick={handleClick}
+			disabled={!selectedBoard}
 		>
 			<img src={ThreeDots} alt="Three Dots Drop Down Menu" />
 			{isEditDeleteOpen && (

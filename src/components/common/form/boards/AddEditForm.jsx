@@ -35,14 +35,11 @@ const AddEditForm = ({
 
 	const onSubmit = async (data) => {
 		if (editForm) {
-			//If the form is used for editing, update the selected board with the new data
 			const updatedBoard = updateSelectedBoard(data, selectedBoard);
-			console.log(updatedBoard);
+
 			dispatch(editBoard(updatedBoard));
 			await updateBoard(updatedBoard);
 		} else {
-			console.log(data);
-			//If the form is used for creating a new board, transform the form data to the desired format
 			const transformData = transformDataColumn(data);
 			dispatch(addBoard(transformData));
 			await createBoard(transformData);
