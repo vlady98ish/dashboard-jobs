@@ -41,6 +41,7 @@ const AddEditForm = ({
 			dispatch(editBoard(updatedBoard));
 			await updateBoard(updatedBoard);
 		} else {
+			console.log(data);
 			//If the form is used for creating a new board, transform the form data to the desired format
 			const transformData = transformDataColumn(data);
 			dispatch(addBoard(transformData));

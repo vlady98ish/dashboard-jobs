@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import AddEditTask from '../common/form/tasks/AddEditTask';
 import ModalWrapper from './ModalWrapper';
 
-const AddEditTaskModal = ({ isOpen, onClose }) => {
+const AddEditTaskModal = ({ isOpen, onClose, title }) => {
 	const [subTasks, setSubTasks] = useState([{ id: 1 }]);
 
 	const addColumn = useCallback(
@@ -19,7 +19,7 @@ const AddEditTaskModal = ({ isOpen, onClose }) => {
 	return (
 		<ModalWrapper isOpen={isOpen} onClose={onClose}>
 			<h2 className="font-700 lg:text-18 lg:leading-23 dark:text-white ">
-				Add New Task
+				{title}
 			</h2>
 			<AddEditTask
 				subTasks={subTasks}

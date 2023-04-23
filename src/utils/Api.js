@@ -79,3 +79,15 @@ export const updateBoard = async (board) => {
 		showToastMessage(ERROR, `Error update board with id ${boardId}`);
 	}
 };
+
+export const deleteTask = async (deleteTask, board) => {
+	console.log(deleteTask);
+	const updatedBoard = JSON.parse(JSON.stringify(board));
+
+	updatedBoard.columns.forEach((column) => {
+		column.tasks = column.tasks.filter(
+			(task) => task.title !== deleteTask.title
+		);
+	});
+	await updateBoard(updatedBoard);
+};

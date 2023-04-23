@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { handleOverlayClick } from '../../utils/handler';
 
 import Modal from 'react-modal';
@@ -9,9 +9,12 @@ import { useSelector } from 'react-redux';
 import TextFieldWithDropDown from '../common/form/tasks/TextFieldWithDropDown';
 import SubtasksWrapper from '../main/tasks/subtasks/SubtasksWrapper';
 
-const TaskInfoModal = ({ isOpen, onClose }) => {
+const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
 	const { selectedBoard } = useSelector((state) => state.boards);
 	const { selectedTask } = useSelector((state) => state.boards);
+	const [isEditDeleteOpen, setIsEditDeleteOpen] = useState(false);
+	// const [isDropMenuOpen, setIsDropMenuOpen] = useState(false);
+
 	return (
 		<Modal
 			isOpen={isOpen}
@@ -25,7 +28,13 @@ const TaskInfoModal = ({ isOpen, onClose }) => {
 					<h2 className="font-700 text-18 leading-23 w-full">
 						{selectedTask.title}
 					</h2>
-					<DropMenuButton />
+					<DropMenuButton
+						setIsEditDeleteOpen={setIsEditDeleteOpen}
+						isEditDeleteOpen={isEditDeleteOpen}
+						setIsOpen={setIsOpen}
+						setEditModalOpen={setIsTaskModalOpen}
+						titles={['Edit task', 'Delete task']}
+					/>
 				</div>
 				<p className="font-500 text-12 leading-23 text-medium_grey">
 					{selectedTask.description}

@@ -4,7 +4,14 @@ import ModalWrapper from './ModalWrapper';
 import { useSelector } from 'react-redux';
 import { v4 } from 'uuid';
 
-const AddEditBoardModal = ({ isOpen, onClose, title, typeEdit = false }) => {
+const AddEditBoardModal = ({
+	isOpen,
+	onClose,
+	title,
+	typeEdit = false
+	// boardModals,
+	// toggleModal
+}) => {
 	const { selectedBoard } = useSelector((state) => state.boards);
 	const [columns, setColumns] = useState([]);
 	const addColumn = useCallback(

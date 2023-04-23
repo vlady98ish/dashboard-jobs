@@ -1,7 +1,421 @@
 {
   "boards": [
     {
+      "id": 1,
+      "name": "Product Roadmap",
+      "columns": [
+        {
+          "name": "Backlog",
+          "tasks": [
+            {
+              "title": "Improve UI/UX of onboarding process",
+              "description": "The current onboarding process is too complicated and needs to be simplified to improve user experience.",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Review current onboarding process",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Identify areas for improvement",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design new onboarding flow",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Test new flow with users",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement new onboarding flow",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Integrate with third-party analytics tool",
+              "description": "We need to integrate our product with a third-party analytics tool to better understand how users are using our product.",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Research and identify potential analytics tools",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Evaluate each tool and select the best one",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Create integration plan",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement integration",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Test integration and ensure data is being properly collected",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "In Progress",
+          "tasks": [
+            {
+              "title": "Improve search functionality",
+              "description": "Our current search functionality is too slow and needs to be optimized to improve user experience.",
+              "status": "In Progress",
+              "subtasks": [
+                {
+                  "title": "Identify areas for optimization",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Implement changes to improve search speed",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Test search functionality with users",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Done",
+          "tasks": [
+            {
+              "title": "Add support for mobile devices",
+              "description": "We need to make our product compatible with mobile devices to increase our user base.",
+              "status": "Done",
+              "subtasks": [
+                {
+                  "title": "Identify areas of product that need to be optimized for mobile devices",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Design mobile-friendly UI/UX",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Implement changes to make product compatible with mobile devices",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Test product on different mobile devices",
+                  "isCompleted": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 2,
+      "name": "Development Sprint",
+      "columns": [
+        {
+          "name": "Backlog",
+          "tasks": [
+            {
+              "title": "Implement user authentication",
+              "description": "",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Research authentication libraries",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design authentication flow",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Create user model",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement login and signup pages",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Improve performance on large datasets",
+              "description": "",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Analyze performance bottlenecks",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Optimize database queries",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement pagination on results",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Add support for third-party integrations",
+              "description": "",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Research popular integrations",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design integration architecture",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement integration with Stripe",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement integration with Zapier",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "In Progress",
+          "tasks": [
+            {
+              "title": "Refactor legacy codebase",
+              "description": "",
+              "status": "In Progress",
+              "subtasks": [
+                {
+                  "title": "Identify problem areas",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design new architecture",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Refactor code",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Implement real-time notifications",
+              "description": "",
+              "status": "In Progress",
+              "subtasks": [
+                {
+                  "title": "Research real-time messaging solutions",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design notification system",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement notification API",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Update UI to display notifications",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Done",
+          "tasks": [
+            {
+              "title": "Implement search functionality",
+              "description": "",
+              "status": "Done",
+              "subtasks": [
+                {
+                  "title": "Design search algorithm",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Implement search API",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Update UI to display search results",
+                  "isCompleted": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "UX/UI Design Sprint",
+      "columns": [
+        {
+          "name": "Ideation",
+          "tasks": [
+            {
+              "title": "Define user personas",
+              "description": "",
+              "status": "Todo",
+              "subtasks": [
+                {
+                  "title": "Conduct user research",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Identify user needs and pain points",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Create user personas",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Sketch initial ideas",
+              "description": "",
+              "status": "Todo",
+              "subtasks": [
+                {
+                  "title": "Brainstorm ideas",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Create low-fidelity sketches",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Get feedback from team",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Create wireframes",
+              "description": "",
+              "status": "",
+              "subtasks": [
+                {
+                  "title": "Convert sketches to digital wireframes",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Get feedback from team",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Refine wireframes",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Design",
+          "tasks": [
+            {
+              "title": "Create high-fidelity mockups",
+              "description": "",
+              "status": "",
+              "subtasks": [
+                {
+                  "title": "Design interface elements",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Create multiple mockup variations",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Get feedback from team",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Refine design",
+              "description": "",
+              "status": "",
+              "subtasks": [
+                {
+                  "title": "Iterate on mockups based on feedback",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Add animations and microinteractions",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Development",
+          "tasks": [
+            {
+              "title": "Hand off to development team",
+              "description": "",
+              "status": "",
+              "subtasks": [
+                {
+                  "title": "Create design specs",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Prepare assets for handoff",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Communicate with developers to answer questions",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "QA and refine",
+              "description": "",
+              "status": "",
+              "subtasks": [
+                {
+                  "title": "Test the developed product for design quality",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Iterate on design based on feedback from QA",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Done",
+          "tasks": []
+        }
+      ]
+    },
+    {
+      "id": 4,
       "name": "Marketing Plan",
       "columns": [
         {
@@ -88,85 +502,58 @@
         },
         {
           "name": "Done",
-          "tasks": []
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Roadmap",
-      "columns": [
-        {
-          "name": "Now",
-          "tasks": []
-        },
-        {
-          "name": "Next",
-          "tasks": []
-        },
-        {
-          "name": "Later",
           "tasks": [
             {
-              "title": "Clean",
-              "description": "qwe",
-              "status": "Later",
+              "title": "Product Hunt launch planned",
+              "description": "",
+              "status": "Done",
               "subtasks": [
                 {
-                  "title": "Todo",
-                  "isCompleted": false
+                  "title": "Hunter found",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Assets gathered",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Product page drafted",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Customers notified",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Network notified",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Launched successfully",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "title": "Show HN post shared",
+              "description": "",
+              "status": "Done",
+              "subtasks": [
+                {
+                  "title": "HN post drafted",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Feedback received and post refined",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Post published",
+                  "isCompleted": true
                 }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "068eb827-e89f-4e76-a472-855fb57ac79b",
-      "name": "Clean",
-      "columns": [
-        {
-          "name": "qwe",
-          "tasks": []
-        }
-      ]
-    },
-    {
-      "id": "48ede3ba-d881-4422-836b-40db3f5c0620",
-      "name": "Vladyslav",
-      "columns": [
-        {
-          "name": "qwe",
-          "tasks": []
-        },
-        {
-          "name": "ewq",
-          "tasks": [
-            {
-              "title": "Clean",
-              "description": "qweqweqweqweqw",
-              "status": "ewq",
-              "subtasks": [
-                {
-                  "title": "qwe",
-                  "isCompleted": false
-                },
-                {
-                  "title": "asd",
-                  "isCompleted": false
-                },
-                {
-                  "title": "dsa",
-                  "isCompleted": false
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "asd",
-          "tasks": []
         }
       ]
     }
