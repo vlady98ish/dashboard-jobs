@@ -5,15 +5,20 @@ import Modal from 'react-modal';
 
 import DropMenuButton from '../common/buttons/DropMenuButton';
 import CustomLabel from '../common/form/CustomLabel';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import TextFieldWithDropDown from '../common/form/tasks/TextFieldWithDropDown';
 import SubtasksWrapper from '../main/tasks/subtasks/SubtasksWrapper';
+import { updateSelectedTask } from '../../features/theme/boardSlice';
 
 const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
 	const { selectedBoard } = useSelector((state) => state.boards);
 	const { selectedTask } = useSelector((state) => state.boards);
 	const [isEditDeleteOpen, setIsEditDeleteOpen] = useState(false);
-	// const [isDropMenuOpen, setIsDropMenuOpen] = useState(false);
+	const dispatch = useDispatch();
+	const updateStatus = (status) => {
+		console.log(status);
+		dispatch(updateSelectedTask(status));
+	};
 
 	return (
 		<Modal
@@ -45,6 +50,7 @@ const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
 					<div className="flex flex-col mt-[24px]">
 						<CustomLabel text={'Current Status'} />
 						<TextFieldWithDropDown
+							onChange={updateStatus}
 							options={selectedBoard && selectedBoard.columns}
 							defaultValue={selectedTask.status}
 						/>

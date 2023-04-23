@@ -13,7 +13,7 @@ const TextFieldWithDropdown = ({
 		<div className="w-full">
 			<select
 				defaultValue={defaultValue}
-				onChange={onChange}
+				onChange={(event) => onChange(event.target.value)}
 				className={style}
 				{...selectProps}
 			>

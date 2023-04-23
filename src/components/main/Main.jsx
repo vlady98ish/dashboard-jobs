@@ -60,6 +60,7 @@ const Main = ({ isMobile }) => {
 				isOpen={isTaskModalOpen}
 				onClose={() => setIsTaskModalOpen(!isTaskModalOpen)}
 				title={'Edit Task'}
+				isEdit={true}
 			/>
 			{isSidebarHidden && <ShowSideBar />}
 		</main>

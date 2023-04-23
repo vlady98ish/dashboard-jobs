@@ -9,7 +9,8 @@ const ColumnsFieldsContainer = ({
 	columns,
 	onColumnChange,
 	register,
-	unregister
+	unregister,
+	typeEdit
 }) => {
 	return (
 		<>
@@ -21,6 +22,7 @@ const ColumnsFieldsContainer = ({
 					onColumnChange={onColumnChange}
 					register={register}
 					unregister={unregister}
+					isEdit={typeEdit}
 				/>
 			))}
 		</>

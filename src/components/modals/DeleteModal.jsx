@@ -30,7 +30,7 @@ const DeleteModal = ({
 			closeTaskInfoModel(false);
 			onClose();
 		},
-		[onClose]
+		[onClose, closeTaskInfoModel]
 	);
 	return (
 		<ModalWrapper isOpen={isOpen} onClose={onClose} title="Delete this board?">

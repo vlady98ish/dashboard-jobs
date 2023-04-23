@@ -25,6 +25,9 @@ const boardSlice = createSlice({
 		setSelectedTask: (state, action) => {
 			state.selectedTask = action.payload;
 		},
+		updateSelectedTask: (state, action) => {
+			state.selectedTask.status = action.payload;
+		},
 		addBoard: (state, action) => {
 			state.boardList = [...state.boardList, action.payload];
 		},
@@ -54,7 +57,8 @@ export const {
 	deleteBoardFromSlice,
 	addBoard,
 	editBoard,
-	setSelectedTask
+	setSelectedTask,
+	updateSelectedTask
 } = boardSlice.actions;
 
 export default boardSlice.reducer;

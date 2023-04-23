@@ -2,12 +2,8 @@ import React from 'react';
 import TextField from '../TextField';
 import CancelIcon from '../../../../assets/icon-cross.svg';
 
-const Column = ({
-	column: { id, name },
-	onColumnChange,
-	register,
-	unregister
-}) => {
+const Column = ({ column, onColumnChange, register, unregister, isEdit }) => {
+	const { id, name, title, isDone } = column;
 	return (
 		<div className="flex items-center">
 			<TextField
@@ -17,7 +13,7 @@ const Column = ({
 				placeholder="e.g. Todo"
 				register={register}
 				required={false}
-				value={name}
+				value={isEdit ? title : name}
 			/>
 			<button
 				type="button"

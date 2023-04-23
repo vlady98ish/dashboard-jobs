@@ -15,12 +15,15 @@ const AddEditTask = ({
 	subTasks,
 	addColumn,
 	onColumnChange: deleteColumn,
-	closeModel
+	closeModel,
+	editForm
 }) => {
 	const formMethods = useForm();
 	const { selectedBoard } = useSelector((state) => state.boards);
+	const { selectedTask } = useSelector((state) => state.boards);
 	const {
 		register,
+		unregister,
 		handleSubmit,
 		formState: { errors }
 	} = formMethods;
@@ -44,10 +47,14 @@ const AddEditTask = ({
 					register={register}
 					required={true}
 					errors={errors}
+					value={editForm ? selectedTask.title : ''}
 				/>
 			</div>
 			<div className="mt-[24px]">
-				<Description register={register} />
+				<Description
+					register={register}
+					value={editForm ? selectedTask.description : ''}
+				/>
 			</div>
 			<div className="mt-[24px]">
 				<ColumnsFieldsContainer
@@ -55,6 +62,8 @@ const AddEditTask = ({
 					columns={subTasks}
 					onColumnChange={deleteColumn}
 					register={register}
+					unregister={unregister}
+					typeEdit={editForm}
 				/>
 			</div>
 			<SecondaryButton
@@ -63,11 +72,11 @@ const AddEditTask = ({
 				onClick={addColumn}
 			/>
 			<div className="mt-[24px]">
-				<StatusField register={register} />
+				<StatusField register={register} value={selectedTask.status} />
 			</div>
 
 			<PrimaryButton
-				text="Create Task"
+				text={editForm ? 'Save Changes' : 'Create New Task'}
 				fullWidth={true}
 				margin="mt-[24px]"
 				paddingY={9}
