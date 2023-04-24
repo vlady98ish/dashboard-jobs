@@ -1,4 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import {
+	addTaskToColumn,
+	findColumnByName,
+	removeTaskFromColumn
+} from '../../utils/helper';
 
 const initialState = {
 	boardList: [],
@@ -26,7 +31,21 @@ const boardSlice = createSlice({
 			state.selectedTask = action.payload;
 		},
 		updateSelectedTask: (state, action) => {
-			state.selectedTask.status = action.payload;
+			const newColumnName = action.payload;
+			let { selectedBoard, selectedTask } = state;
+			const oldColumnName = selectedTask.status;
+			const board = state.boardList.find(
+				(board) => board.id === state.selectedBoard.id
+			);
+			const oldColumn = findColumnByName(board, oldColumnName);
+
+			const newColumn = findColumnByName(board, newColumnName);
+
+			removeTaskFromColumn(oldColumn, selectedTask.title);
+
+			state.selectedTask = { ...selectedTask, status: newColumnName };
+			newColumn.tasks.push(state.selectedTask);
+			state.selectedBoard = { ...selectedBoard, columns: board.columns };
 		},
 		addBoard: (state, action) => {
 			state.boardList = [...state.boardList, action.payload];
@@ -45,8 +64,7 @@ const boardSlice = createSlice({
 				(board) => board.id !== action.payload
 			);
 			state.selectedBoard = null;
-		},
-		addTaskToColumn: (state, action) => {}
+		}
 	}
 });
 

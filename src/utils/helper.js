@@ -2,13 +2,6 @@ import { toast } from 'react-toastify';
 import { ERROR, SUCCESS } from './constant';
 import { v4 } from 'uuid';
 
-export const addTaskToColumn = (board, columnName, task) => {
-	let column = findColumnForName(board, columnName);
-	if (column) {
-		column.tasks.push(task);
-	}
-};
-
 export const transformDataColumn = (data) => {
 	const name = data.name;
 	const id = v4();
@@ -67,10 +60,17 @@ export const updateSelectedBoard = (data, board) => {
 	return updatedBoard;
 };
 
-export const findColumnForName = (board, columnName) => {
+export const findColumnByName = (board, columnName) => {
 	return board.columns.find((column) => column.name === columnName);
 };
 
+export const removeTaskFromColumn = (column, taskTitle) => {
+	column.tasks = column.tasks.filter((task) => task.title !== taskTitle);
+};
+
+export const addTaskToColumn = (column, task) => {
+	column.tasks.push(task);
+};
 export const dataToJsonTask = (data) => {
 	const title = data.name;
 	const description = data.description;

@@ -1,5 +1,5 @@
 import 'react-toastify/ReactToastify.css';
-import { addTaskToColumn, showToastMessage } from './helper';
+import { addTaskToColumn, findColumnByName, showToastMessage } from './helper';
 import { API_LINK, ERROR, SUCCESS } from './constant';
 
 export const getAllBoards = async () => {
@@ -53,8 +53,8 @@ export const addTask = async (boardId, task) => {
 	try {
 		let board = await getBoard(boardId);
 		console.log(`Board: ${board}`);
-
-		addTaskToColumn(board, columnName, task);
+		let column = findColumnByName(board, columnName);
+		addTaskToColumn(column, task);
 		await updateBoard(board);
 	} catch (error) {
 		showToastMessage(
@@ -81,7 +81,6 @@ export const updateBoard = async (board) => {
 };
 
 export const deleteTask = async (deleteTask, board) => {
-	console.log(deleteTask);
 	const updatedBoard = JSON.parse(JSON.stringify(board));
 
 	updatedBoard.columns.forEach((column) => {
@@ -89,5 +88,13 @@ export const deleteTask = async (deleteTask, board) => {
 			(task) => task.title !== deleteTask.title
 		);
 	});
-	await updateBoard(updatedBoard);
+	try {
+		await updateBoard(updatedBoard);
+		showToastMessage(
+			ERROR,
+			`Task ${deleteTask.title} was deleted successfully`
+		);
+	} catch (error) {
+		showToastMessage(ERROR, `Error deleting task : ${deleteTask.title}`);
+	}
 };
