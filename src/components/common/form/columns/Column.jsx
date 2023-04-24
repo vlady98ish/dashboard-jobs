@@ -13,7 +13,7 @@ const Column = ({ column, onColumnChange, register, unregister, isEdit }) => {
 				placeholder="e.g. Todo"
 				register={register}
 				required={false}
-				value={isEdit ? title : name}
+				value={title ? title : name}
 			/>
 			<button
 				type="button"

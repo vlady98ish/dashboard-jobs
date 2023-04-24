@@ -24,6 +24,14 @@ const boardSlice = createSlice({
 				(board) => board.id === action.payload
 			);
 		},
+		removeTask: (state) => {
+			const column = findColumnByName(
+				state.selectedBoard,
+				state.selectedTask.status
+			);
+			removeTaskFromColumn(column, state.selectedTask.title);
+			state.selectedTask = {};
+		},
 		setIsLoading: (state) => {
 			state.isLoading = !state.isLoading;
 		},
@@ -76,7 +84,8 @@ export const {
 	addBoard,
 	editBoard,
 	setSelectedTask,
-	updateSelectedTask
+	updateSelectedTask,
+	removeTask
 } = boardSlice.actions;
 
 export default boardSlice.reducer;

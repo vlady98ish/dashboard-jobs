@@ -3,7 +3,10 @@ import ButtonDestructive from '../common/buttons/ButtonDestructive';
 import SecondaryButton from '../common/buttons/SecondaryButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteBoard, deleteTask } from '../../utils/Api';
-import { deleteBoardFromSlice } from '../../features/theme/boardSlice';
+import {
+	deleteBoardFromSlice,
+	removeTask
+} from '../../features/theme/boardSlice';
 import ModalWrapper from './ModalWrapper';
 
 const DeleteModal = ({
@@ -26,7 +29,8 @@ const DeleteModal = ({
 	);
 	const handleDeleteTask = useCallback(
 		async (task, board) => {
-			await deleteTask(task, board);
+			await deleteTask(task, board, true);
+			dispatch(removeTask());
 			closeTaskInfoModel(false);
 			onClose();
 		},

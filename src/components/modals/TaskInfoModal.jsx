@@ -9,15 +9,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import TextFieldWithDropDown from '../common/form/tasks/TextFieldWithDropDown';
 import SubtasksWrapper from '../main/tasks/subtasks/SubtasksWrapper';
 import { updateSelectedTask } from '../../features/theme/boardSlice';
+import { addTask, deleteTask, updateBoard } from '../../utils/Api';
 
 const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
 	const { selectedBoard } = useSelector((state) => state.boards);
 	const { selectedTask } = useSelector((state) => state.boards);
 	const [isEditDeleteOpen, setIsEditDeleteOpen] = useState(false);
 	const dispatch = useDispatch();
-	const updateStatus = (status) => {
-		console.log(status);
+	const updateStatus = async (status) => {
 		dispatch(updateSelectedTask(status));
+		await deleteTask(selectedTask, selectedBoard, false);
+		await addTask(selectedBoard.id, { ...selectedTask, status: status });
+		//update selected task in json
 	};
 
 	return (

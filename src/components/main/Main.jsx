@@ -29,7 +29,6 @@ const Main = ({ isMobile }) => {
 					<EmptyBoard isMobile={isMobile} />
 				</>
 			) : (
-				//TODO: Edit for edit Modal!
 				<TaskColumnWrapper
 					columns={selectedBoard.columns}
 					setOpen={setTaskInfoModalIsOpen}

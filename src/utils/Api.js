@@ -55,7 +55,7 @@ export const addTask = async (boardId, task) => {
 		console.log(`Board: ${board}`);
 		let column = findColumnByName(board, columnName);
 		addTaskToColumn(column, task);
-		await updateBoard(board);
+		await updateBoard(board, true);
 	} catch (error) {
 		showToastMessage(
 			ERROR,
@@ -64,7 +64,7 @@ export const addTask = async (boardId, task) => {
 	}
 };
 
-export const updateBoard = async (board) => {
+export const updateBoard = async (board, toast = true) => {
 	const boardId = board.id;
 	try {
 		await fetch(`${API_LINK}/${boardId}`, {
@@ -74,13 +74,15 @@ export const updateBoard = async (board) => {
 			},
 			body: JSON.stringify(board)
 		});
-		showToastMessage(SUCCESS, `Board was updated successfully`);
+		if (toast) {
+			showToastMessage(SUCCESS, `Board was updated successfully`);
+		}
 	} catch (error) {
 		showToastMessage(ERROR, `Error update board with id ${boardId}`);
 	}
 };
 
-export const deleteTask = async (deleteTask, board) => {
+export const deleteTask = async (deleteTask, board, toast) => {
 	const updatedBoard = JSON.parse(JSON.stringify(board));
 
 	updatedBoard.columns.forEach((column) => {
@@ -89,9 +91,9 @@ export const deleteTask = async (deleteTask, board) => {
 		);
 	});
 	try {
-		await updateBoard(updatedBoard);
+		await updateBoard(updatedBoard, toast);
 		showToastMessage(
-			ERROR,
+			SUCCESS,
 			`Task ${deleteTask.title} was deleted successfully`
 		);
 	} catch (error) {

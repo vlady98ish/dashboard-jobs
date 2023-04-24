@@ -5,9 +5,8 @@ import { v4 } from 'uuid';
 const SubtasksWrapper = ({ subtasks }) => {
 	return (
 		<div className="flex flex-col gap-[8px] mt-[24px]">
-			{subtasks.map((subtask) => (
-				<Subtask subtask={subtask} key={v4()} />
-			))}
+			{subtasks &&
+				subtasks.map((subtask) => <Subtask subtask={subtask} key={v4()} />)}
 		</div>
 	);
 };
