@@ -9,7 +9,6 @@ This full-stack Kanban application allows users to create, read, update, and del
 - Create, read, update, and delete boards and tasks
 - Form validation when creating/editing boards and tasks
 - Mark subtasks as complete and move tasks between columns
-- Drag and drop tasks to change their status and re-order them in a column
 - Toggle between light/dark themes
 - Hide/show board sidebar
 - Track changes using localStorage
