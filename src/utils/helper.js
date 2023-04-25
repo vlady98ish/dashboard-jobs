@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import { ERROR, SUCCESS } from './constant';
 import { v4 } from 'uuid';
+import subtask from '../components/main/tasks/subtasks/Subtask';
 
 export const transformDataColumn = (data) => {
 	const name = data.name;
@@ -105,4 +106,21 @@ export const showToastMessage = (status, message) => {
 		default:
 			return;
 	}
+};
+
+export const findTaskByTitle = (column, title) => {
+	return column.tasks.find((task) => task.title === title);
+};
+export const findSubtaskByTitle = (task, title) => {
+	return task.subtasks.find((subtask) => subtask.title === title);
+};
+
+export const updateTaskInBoard = (task, board, subtask) => {
+	const boardToUpdate = JSON.parse(JSON.stringify(board));
+	const column = findColumnByName(boardToUpdate, task.status);
+	let taskToUpdate = findTaskByTitle(column, task.title);
+	let subtaskToUpdate = findSubtaskByTitle(taskToUpdate, subtask.title);
+	subtaskToUpdate.isCompleted = subtask.isCompleted;
+
+	return boardToUpdate;
 };

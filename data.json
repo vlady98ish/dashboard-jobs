@@ -14,11 +14,11 @@
               "subtasks": [
                 {
                   "title": "Research and identify potential analytics tools",
-                  "isCompleted": false
+                  "isCompleted": true
                 },
                 {
                   "title": "Evaluate each tool and select the best one",
-                  "isCompleted": false
+                  "isCompleted": true
                 },
                 {
                   "title": "Create integration plan",
@@ -94,6 +94,29 @@
                   "isCompleted": false
                 }
               ]
+            },
+            {
+              "title": "Improve UI/UX of onboarding process",
+              "description": "The current onboarding process is too complicated and needs to be simplified to improve user experience.",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Review current onboarding process",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Identify areas for improvement",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design new onboarding flow",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement new onboarding flow",
+                  "isCompleted": false
+                }
+              ]
             }
           ]
         },
@@ -144,29 +167,6 @@
                 {
                   "title": "Test product on different mobile devices",
                   "isCompleted": true
-                }
-              ]
-            },
-            {
-              "title": "Improve UI/UX of onboarding process",
-              "description": "The current onboarding process is too complicated and needs to be simplified to improve user experience.",
-              "status": "Done",
-              "subtasks": [
-                {
-                  "title": "Review current onboarding process",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Identify areas for improvement",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Design new onboarding flow",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Implement new onboarding flow",
-                  "isCompleted": false
                 }
               ]
             }

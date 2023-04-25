@@ -64,6 +64,7 @@ const boardSlice = createSlice({
 			const boardForUpdate = state.boardList.find(
 				(board) => board.id === state.selectedBoard.id
 			);
+
 			boardForUpdate.name = board.name;
 			boardForUpdate.columns = board.columns;
 			state.selectedBoard = boardForUpdate;
