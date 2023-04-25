@@ -15,6 +15,12 @@ const Sidebar = () => {
 	const { boardList } = useSelector((state) => state.boards);
 	const [isOpen, setIsOpen] = useState(false);
 
+	const handleCloseSidebar = () => {
+		setTimeout(() => {
+			setIsOpen(false);
+		}, 4000);
+	};
+
 	const renderSpinnerOrBoardList = () => {
 		if (boardList.length === 0) {
 			return (
@@ -28,7 +34,10 @@ const Sidebar = () => {
 	};
 
 	return (
-		<div className="flex flex-col h-full justify-between flex-shrink-0 pb-[32px] dark:bg-dark_grey lg:w-[300px] md:w-[260px]">
+		<div
+			className={`flex flex-col h-full justify-between flex-shrink-0 pb-[32px] dark:bg-dark_grey lg:w-[300px] md:w-[260px] 
+			} `}
+		>
 			<div>
 				<h3 className="text-medium_grey text-12 leading-15 tracking-2.4 font-700 non-italic  lg:px-[32px] md:px-[24px]">
 					ALL BOARDS ({boardList.length})
@@ -37,7 +46,7 @@ const Sidebar = () => {
 				<CreateNewBoard setIsOpen={setIsOpen} />
 				<AddEditBoardModal
 					isOpen={isOpen}
-					onClose={() => setIsOpen(false)}
+					onClose={() => handleCloseSidebar()}
 					title="Add New Board"
 				/>
 			</div>

@@ -8,7 +8,7 @@ import CustomLabel from '../common/form/CustomLabel';
 import { useDispatch, useSelector } from 'react-redux';
 import TextFieldWithDropDown from '../common/form/tasks/TextFieldWithDropDown';
 import SubtasksWrapper from '../main/tasks/subtasks/SubtasksWrapper';
-import { updateSelectedTask } from '../../features/theme/boardSlice';
+import { updateSelectedTask } from '../../redux/slices/boardSlice';
 import { addTask, deleteTask, updateBoard } from '../../utils/Api';
 
 const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
@@ -17,10 +17,9 @@ const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
 	const [isEditDeleteOpen, setIsEditDeleteOpen] = useState(false);
 	const dispatch = useDispatch();
 	const updateStatus = async (status) => {
-		dispatch(updateSelectedTask(status));
+		dispatch(updateSelectedTask({ ...selectedTask, status: status }));
 		await deleteTask(selectedTask, selectedBoard, false);
 		await addTask(selectedBoard.id, { ...selectedTask, status: status });
-		//update selected task in json
 	};
 
 	return (
@@ -42,13 +41,18 @@ const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
 						setIsOpen={setIsOpen}
 						setEditModalOpen={setIsTaskModalOpen}
 						titles={['Edit task', 'Delete task']}
+						closeTaskInfoModal={onClose}
 					/>
 				</div>
 				<p className="font-500 text-12 leading-23 text-medium_grey">
 					{selectedTask.description}
 				</p>
 				<div>
-					<CustomLabel text="Subtasks (2 of 3)" />
+					<CustomLabel
+						text={`Subtasks (2 of ${
+							selectedTask.subtasks && selectedTask.subtasks.length
+						})`}
+					/>
 					<SubtasksWrapper subtasks={selectedTask.subtasks} />
 					<div className="flex flex-col mt-[24px]">
 						<CustomLabel text={'Current Status'} />

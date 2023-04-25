@@ -7,7 +7,7 @@ import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
 import { createBoard, updateBoard } from '../../../../utils/Api';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBoard, editBoard } from '../../../../features/theme/boardSlice';
+import { addBoard, editBoard } from '../../../../redux/slices/boardSlice';
 import {
 	transformDataColumn,
 	updateSelectedBoard

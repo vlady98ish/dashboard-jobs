@@ -9,7 +9,7 @@ const PrimaryButton = ({
 	onClick,
 	disabled = false
 }) => {
-	const normalStyle = `bg-main_purple rounded-[24px] submit ${margin} px-[${paddingX}px] py-[${paddingY}px] ${
+	const normalStyle = `bg-main_purple rounded-[24px] submit ${margin}  flex-grow-1 px-[${paddingX}px] py-[${paddingY}px]  ${
 		fullWidth && 'w-full'
 	}`;
 	const hoverStyle = `hover:bg-main_purple_hover `;
@@ -22,7 +22,9 @@ const PrimaryButton = ({
 			onClick={onClick}
 			disabled={disabled}
 		>
-			<span className="font-700 text-15 leading-19 text-white">{text}</span>
+			<span className="font-700 text-15 leading-19 text-white text-center">
+				{text}
+			</span>
 		</button>
 	);
 };

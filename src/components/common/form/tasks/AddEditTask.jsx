@@ -5,21 +5,23 @@ import ColumnsFieldsContainer from '../columns/ColumnsFieldsContainer';
 import SecondaryButton from '../../buttons/SecondaryButton';
 import PrimaryButton from '../../buttons/PrimaryButton';
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Description from './Description';
 import StatusField from './StatusField';
 import { dataToJsonTask } from '../../../../utils/helper';
-import { addTask } from '../../../../utils/Api';
+import { addTask, deleteTask } from '../../../../utils/Api';
+import { updateSelectedTask } from '../../../../redux/slices/boardSlice';
 
 const AddEditTask = ({
-	subTasks,
-	addColumn,
-	onColumnChange: deleteColumn,
-	closeModel,
-	editForm
-}) => {
+	                     subTasks,
+	                     addColumn,
+	                     onColumnChange: deleteColumn,
+	                     closeModel,
+	                     editForm
+                     }) => {
 	const formMethods = useForm();
 	const { selectedBoard } = useSelector((state) => state.boards);
+	const dispatch = useDispatch();
 	const { selectedTask } = useSelector((state) => state.boards);
 	const {
 		register,
@@ -27,15 +29,18 @@ const AddEditTask = ({
 		handleSubmit,
 		formState: { errors }
 	} = formMethods;
-
+	
 	const onSubmit = async (data) => {
+		
+		await deleteTask(dataToJsonTask(data), selectedBoard, false);
 		await addTask(selectedBoard.id, dataToJsonTask(data));
+		dispatch(updateSelectedTask(dataToJsonTask(data)));
 		//TODO: ADD TASK TO STORE
-		// dispatch(createBoardForSlice(transformData(data)));
-
+		
+		
 		closeModel();
 	};
-
+	
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="mt-[24px]">
@@ -75,7 +80,7 @@ const AddEditTask = ({
 			<div className="mt-[24px]">
 				<StatusField register={register} value={selectedTask.status} />
 			</div>
-
+			
 			<PrimaryButton
 				text={editForm ? 'Save Changes' : 'Create New Task'}
 				fullWidth={true}

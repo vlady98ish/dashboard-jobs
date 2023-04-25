@@ -1,5 +1,5 @@
-import { setSelectedBoard } from '../features/theme/boardSlice';
-import { toggleSideBar } from '../features/theme/layoutSlice';
+import { setSelectedBoard } from '../redux/slices/boardSlice';
+import { toggleSideBar } from '../redux/slices/layoutSlice';
 
 export const handleClick = (dispatch, id) => {
 	dispatch(setSelectedBoard(id));

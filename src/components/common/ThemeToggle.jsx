@@ -4,7 +4,7 @@ import 'react-toggle/style.css';
 import LightThemeIcon from '../../assets/icon-light-theme.svg';
 import DarkThemeIcon from '../../assets/icon-dark-theme.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeTheme } from '../../features/theme/themeSlice';
+import { changeTheme } from '../../redux/slices/themeSlice';
 
 const ThemeToggle = ({ padding }) => {
 	const dispatch = useDispatch();

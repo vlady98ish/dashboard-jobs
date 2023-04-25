@@ -39,9 +39,10 @@ const boardSlice = createSlice({
 			state.selectedTask = action.payload;
 		},
 		updateSelectedTask: (state, action) => {
-			const newColumnName = action.payload;
-			let { selectedBoard, selectedTask } = state;
-			const oldColumnName = selectedTask.status;
+			let selectedTask = action.payload;
+			const newColumnName = action.payload.status;
+			let { selectedBoard } = state;
+			const oldColumnName = state.selectedTask.status;
 			const board = state.boardList.find(
 				(board) => board.id === state.selectedBoard.id
 			);
@@ -51,7 +52,7 @@ const boardSlice = createSlice({
 
 			removeTaskFromColumn(oldColumn, selectedTask.title);
 
-			state.selectedTask = { ...selectedTask, status: newColumnName };
+			state.selectedTask = { ...action.payload };
 			newColumn.tasks.push(state.selectedTask);
 			state.selectedBoard = { ...selectedBoard, columns: board.columns };
 		},

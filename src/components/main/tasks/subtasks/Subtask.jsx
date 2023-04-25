@@ -11,7 +11,7 @@ const Subtask = ({ subtask }) => {
 					id="checkbox-list"
 					type="checkbox"
 					className="absolute h-0 w-0 opacity-0"
-					value="false"
+					defaultValue="false"
 				/>
 				<span
 					className="flex h-4 w-4 items-center justify-center rounded-[4px] border border-medium_grey border-opacity-20  after:absolute

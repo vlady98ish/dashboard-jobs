@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 
 import { getAllBoards } from '../utils/Api';
-import { setBoards, setIsLoading } from '../features/theme/boardSlice';
+import { setBoards, setIsLoading } from '../redux/slices/boardSlice';
 import { showToastMessage } from '../utils/helper';
 import { ERROR } from '../utils/constant';
 
@@ -45,7 +45,7 @@ const Dashboard = () => {
 						<div className=" w-[1px] bg-lines_light dark:bg-lines_dark md:block" />
 					</div>
 				)}
-				<div className="flex min-w-0 flex-1 flex-col">
+				<div className="flex min-w-0 max-h-full flex-1 flex-col">
 					<Main isMobile={isMobile} />
 				</div>
 			</div>

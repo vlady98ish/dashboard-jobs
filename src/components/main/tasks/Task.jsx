@@ -1,5 +1,5 @@
 import React from 'react';
-import { setSelectedTask } from '../../../features/theme/boardSlice';
+import { setSelectedTask } from '../../../redux/slices/boardSlice';
 import { useDispatch } from 'react-redux';
 
 const Task = ({ title, description, status, subtasks, setOpen }) => {

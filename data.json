@@ -27,9 +27,70 @@
                 {
                   "title": "Implement integration",
                   "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Improve onboarding flow",
+              "description": "We've received feedback that our onboarding process could be more intuitive and user-friendly.",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Analyze user feedback",
+                  "isCompleted": false
                 },
                 {
-                  "title": "Test integration and ensure data is being properly collected",
+                  "title": "Research onboarding best practices",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design new onboarding flow",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement new onboarding flow",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Implement user roles and permissions",
+              "description": "We need to implement a system of user roles and permissions to better control access to certain features and data.",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Design user role hierarchy",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Create user role model",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement role-based access control",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Add support for multiple languages",
+              "description": "We want to make our product accessible to non-English speakers by adding support for multiple languages.",
+              "status": "Backlog",
+              "subtasks": [
+                {
+                  "title": "Identify languages to support",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design multi-language architecture",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement language selection feature",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Translate UI and content into supported languages",
                   "isCompleted": false
                 }
               ]
@@ -54,33 +115,6 @@
                 },
                 {
                   "title": "Test search functionality with users",
-                  "isCompleted": false
-                }
-              ]
-            },
-            {
-              "title": "Improve UI/UX of onboarding process",
-              "description": "The current onboarding process is too complicated and needs to be simplified to improve user experience.",
-              "status": "In Progress",
-              "subtasks": [
-                {
-                  "title": "Review current onboarding process",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Identify areas for improvement",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Design new onboarding flow",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Test new flow with users",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Implement new onboarding flow",
                   "isCompleted": false
                 }
               ]
@@ -112,20 +146,31 @@
                   "isCompleted": true
                 }
               ]
+            },
+            {
+              "title": "Improve UI/UX of onboarding process",
+              "description": "The current onboarding process is too complicated and needs to be simplified to improve user experience.",
+              "status": "Done",
+              "subtasks": [
+                {
+                  "title": "Review current onboarding process",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Identify areas for improvement",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Design new onboarding flow",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Implement new onboarding flow",
+                  "isCompleted": false
+                }
+              ]
             }
           ]
-        },
-        {
-          "name": "qwe",
-          "tasks": []
-        },
-        {
-          "name": "ewq",
-          "tasks": []
-        },
-        {
-          "name": "asd",
-          "tasks": []
         }
       ]
     },
@@ -422,26 +467,6 @@
         },
         {
           "name": "Done",
-          "tasks": []
-        },
-        {
-          "name": "q",
-          "tasks": []
-        },
-        {
-          "name": "w",
-          "tasks": []
-        },
-        {
-          "name": "e",
-          "tasks": []
-        },
-        {
-          "name": "r",
-          "tasks": []
-        },
-        {
-          "name": "s",
           "tasks": []
         }
       ]

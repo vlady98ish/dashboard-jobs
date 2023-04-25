@@ -6,7 +6,7 @@ import { deleteBoard, deleteTask } from '../../utils/Api';
 import {
 	deleteBoardFromSlice,
 	removeTask
-} from '../../features/theme/boardSlice';
+} from '../../redux/slices/boardSlice';
 import ModalWrapper from './ModalWrapper';
 
 const DeleteModal = ({

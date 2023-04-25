@@ -8,6 +8,7 @@ const DropMenuButton = ({
 	isEditDeleteOpen,
 	setIsOpen,
 	setEditModalOpen,
+	closeTaskInfoModal,
 	titles
 }) => {
 	const { selectedBoard } = useSelector((state) => state.boards);
@@ -28,6 +29,7 @@ const DropMenuButton = ({
 					setIsOpen={setIsOpen}
 					setEditModalOpen={setEditModalOpen}
 					titles={titles}
+					closeTaskInfoModal={closeTaskInfoModal}
 				/>
 			)}
 		</button>

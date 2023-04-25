@@ -7,7 +7,7 @@ const TasksColumn = ({ column, setOpen }) => {
 	let name = column.name;
 	let tasks = column.tasks;
 	return (
-		<div className="w-[280px] max-h-full overflow-y-auto flex flex-col flex-shrink-0 gap-[20px] scrollbar-hide">
+		<div className="w-[280px] max-h-[79vh] overflow-y-auto flex flex-col flex-shrink-0 gap-[20px] scrollbar-hide">
 			<StatusTask status={name} size={tasks.length} />
 
 			{tasks &&

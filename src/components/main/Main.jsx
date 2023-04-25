@@ -45,7 +45,7 @@ const Main = ({ isMobile }) => {
 			/>
 			<TaskInfoModal
 				isOpen={taskInfoModalIsOpen}
-				onClose={() => setTaskInfoModalIsOpen(!taskInfoModalIsOpen)}
+				onClose={() => setTaskInfoModalIsOpen(false)}
 				setIsTaskModalOpen={setIsTaskModalOpen}
 				setIsOpen={setIsDeleteModalOpen}
 			/>
