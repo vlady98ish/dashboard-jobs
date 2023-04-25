@@ -114,6 +114,18 @@
               ]
             }
           ]
+        },
+        {
+          "name": "qwe",
+          "tasks": []
+        },
+        {
+          "name": "ewq",
+          "tasks": []
+        },
+        {
+          "name": "asd",
+          "tasks": []
         }
       ]
     },
@@ -411,6 +423,26 @@
         {
           "name": "Done",
           "tasks": []
+        },
+        {
+          "name": "q",
+          "tasks": []
+        },
+        {
+          "name": "w",
+          "tasks": []
+        },
+        {
+          "name": "e",
+          "tasks": []
+        },
+        {
+          "name": "r",
+          "tasks": []
+        },
+        {
+          "name": "s",
+          "tasks": []
         }
       ]
     },
@@ -421,37 +453,6 @@
         {
           "name": "Todo",
           "tasks": [
-            {
-              "title": "Plan Product Hunt launch",
-              "description": "",
-              "status": "Todo",
-              "subtasks": [
-                {
-                  "title": "Find hunter",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Gather assets",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Draft product page",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Notify customers",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Notify network",
-                  "isCompleted": false
-                },
-                {
-                  "title": "Launch!",
-                  "isCompleted": false
-                }
-              ]
-            },
             {
               "title": "Share on Show HN",
               "description": "",
@@ -490,6 +491,37 @@
                 },
                 {
                   "title": "Publish on Medium",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Plan Product Hunt launch",
+              "description": "",
+              "status": "Todo",
+              "subtasks": [
+                {
+                  "title": "Find hunter",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Gather assets",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Draft product page",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Notify customers",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Notify network",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Launch!",
                   "isCompleted": false
                 }
               ]

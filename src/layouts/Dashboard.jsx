@@ -19,7 +19,7 @@ const Dashboard = () => {
 	const isSidebarHidden = useSelector((state) => state.sidebar.hidden);
 
 	// Get a boolean value indicating whether the screen size is less than or equal to 767 pixels wide
-	const isMobile = useMediaQuery({ maxWidth: 767 });
+	const isMobile = useMediaQuery({ maxWidth: 768 });
 
 	// Load all boards from REST API on mount
 	useEffect(() => {
@@ -32,21 +32,22 @@ const Dashboard = () => {
 	}, [dispatch]);
 
 	return (
-		<div className="flex flex-1">
-			{/* If the sidebar is not hidden... */}
-			{!isSidebarHidden && (
-				<div className="flex lg:h-screen">
-					{/* ...and the screen size is not mobile... */}
-					{!isMobile && <Sidebar />}
+		<div className="flex flex-col  h-screen">
+			<Header isMobile={isMobile} />
+			<div className="flex h-full ">
+				{/* If the sidebar is not hidden... */}
+				{!isSidebarHidden && (
+					<div className="flex h-full">
+						{/* ...and the screen size is not mobile... */}
+						{!isMobile && <Sidebar />}
 
-					{/* ...add a vertical line as a separator */}
-					<div className=" w-[1.5px] bg-lines_light dark:bg-lines_dark md:block" />
+						{/* ...add a vertical line as a separator */}
+						<div className=" w-[1px] bg-lines_light dark:bg-lines_dark md:block" />
+					</div>
+				)}
+				<div className="flex min-w-0 flex-1 flex-col">
+					<Main isMobile={isMobile} />
 				</div>
-			)}
-			{/* Render the header and main content */}
-			<div className="flex flex-col w-screen h-screen">
-				<Header isMobile={isMobile} />
-				<Main isMobile={isMobile} />
 			</div>
 		</div>
 	);

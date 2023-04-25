@@ -67,18 +67,13 @@ input[type="checkbox"] {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.scroll-none {
-    overflow: hidden;
-}
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-*::-webkit-scrollbar {
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-* {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
+
+
+
 

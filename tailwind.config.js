@@ -4,6 +4,7 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		screens: {
+			xs: '0px',
 			sm: '480px',
 			md: '768px',
 			lg: '976px',
@@ -17,6 +18,7 @@ module.exports = {
 			12: '0.75rem',
 			15: '0.938rem',
 			18: '1.125rem',
+			20: '1.25rem',
 			24: '1.5rem'
 		},
 		fontWeight: {

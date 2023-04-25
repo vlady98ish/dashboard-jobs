@@ -19,7 +19,7 @@ const Main = ({ isMobile }) => {
 	const [idDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 	return (
 		<main
-			className={`bg-light_grey h-full  dark:bg-very_dark_grey relative pl-[20px] pt-[24px] pb-[50px]
+			className={`bg-light_grey h-full dark:bg-very_dark_grey relative pl-[20px] pt-[24px] pb-[50px] flex-1 overflow-x-auto
 			`}
 		>
 			{!selectedBoard ? (

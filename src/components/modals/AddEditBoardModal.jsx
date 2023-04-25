@@ -34,6 +34,7 @@ const AddEditBoardModal = ({ isOpen, onClose, title, typeEdit = false }) => {
 	useEffect(() => {
 		updateColumns();
 	}, [updateColumns]);
+
 	return (
 		<ModalWrapper isOpen={isOpen} onClose={onClose}>
 			<h2 className="font-700 lg:text-18 lg:leading-23 dark:text-white ">

@@ -27,7 +27,7 @@ const TaskInfoModal = ({ isOpen, setIsOpen, onClose, setIsTaskModalOpen }) => {
 		<Modal
 			isOpen={isOpen}
 			overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-			className="h-fit w-full sm:max-w-[343px] bg-white  rounded-[6px]  dark:bg-dark_grey md:p-[32px]  md:max-w-[480px] focus:outline-none"
+			className="h-fit w-full xs:max-w-[343px] xs:p-[24px] bg-white  rounded-[6px]  dark:bg-dark_grey md:p-[32px]  md:max-w-[480px] focus:outline-none"
 			onRequestClose={(e) => handleOverlayClick(e, onClose)}
 			ariaHideApp={false}
 		>

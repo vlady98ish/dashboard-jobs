@@ -4,17 +4,17 @@ import DropMenuButton from '../common/buttons/DropMenuButton';
 import PlusTask from '../../assets/icon-add-task-mobile.svg';
 
 const HeaderButtons = ({
-	                       isMobile,
-	                       setIsOpenAddTask,
-	                       selectedBoard,
-	                       setIsOpen,
-	                       setIsEditDeleteOpen,
-	                       setIsEditModalOpen,
-	                       isOpenAddTask,
-	                       isEditDeleteOpen
-                       }) => {
+	isMobile,
+	setIsOpenAddTask,
+	selectedBoard,
+	setIsOpen,
+	setIsEditDeleteOpen,
+	setIsEditModalOpen,
+	isOpenAddTask,
+	isEditDeleteOpen
+}) => {
 	return (
-		<div className="flex items-center">
+		<div className="flex items-center ">
 			<PrimaryButton
 				text={
 					isMobile ? <img src={PlusTask} alt="Add Task" /> : '+ Add New Task'

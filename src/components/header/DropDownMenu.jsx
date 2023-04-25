@@ -5,10 +5,10 @@ import { TailSpin } from 'react-loader-spinner';
 import CreateNewBoard from '../common/CreateNewBoard';
 import ThemeToggle from '../common/ThemeToggle';
 
-const DropDownMenu = () => {
+const DropDownMenu = ({ setAddBoardModalOpen, setIsDropDownOpen }) => {
 	const { boardList } = useSelector((state) => state.boards);
 	return (
-		<div className="absolute top-[110px] left-1/2 transform -translate-x-1/2  z-50">
+		<div className="absolute top-[50px] left-1/2 transform -translate-x-1/2  z-50">
 			<div className="flex flex-col bg-white rounded-[8px] shadow-drop dark:bg-dark_grey">
 				<h3
 					className="text-medium_grey text-12 leading-15
@@ -24,7 +24,10 @@ const DropDownMenu = () => {
 				) : (
 					<BoardItems boards={boardList} />
 				)}
-				<CreateNewBoard />
+				<CreateNewBoard
+					setIsOpen={setAddBoardModalOpen}
+					setIsDropDownOpen={setIsDropDownOpen}
+				/>
 				<ThemeToggle padding="px-[57px] py-[14px]" />
 			</div>
 		</div>

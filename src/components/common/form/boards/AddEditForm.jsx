@@ -50,7 +50,7 @@ const AddEditForm = ({
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div className="mt-[24px]">
+			<div className="mt-[24px] flex-shrink-0 overflow-y-auto ">
 				<CustomLabel htmlFor="nameBoard" text="Name" />
 				<TextField
 					type="text"

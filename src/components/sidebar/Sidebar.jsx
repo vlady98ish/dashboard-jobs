@@ -28,10 +28,9 @@ const Sidebar = () => {
 	};
 
 	return (
-		<div className="flex flex-col justify-between flex-shrink-0 py-[32px] dark:bg-dark_grey lg:w-[300px] md:w-[260px]">
+		<div className="flex flex-col h-full justify-between flex-shrink-0 pb-[32px] dark:bg-dark_grey lg:w-[300px] md:w-[260px]">
 			<div>
-				<Logo />
-				<h3 className="text-medium_grey text-12 leading-15 tracking-2.4 font-700 non-italic mt-[54px] lg:px-[32px] md:px-[24px]">
+				<h3 className="text-medium_grey text-12 leading-15 tracking-2.4 font-700 non-italic  lg:px-[32px] md:px-[24px]">
 					ALL BOARDS ({boardList.length})
 				</h3>
 				{renderSpinnerOrBoardList()}

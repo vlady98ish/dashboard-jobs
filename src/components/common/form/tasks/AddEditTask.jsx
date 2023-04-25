@@ -30,6 +30,7 @@ const AddEditTask = ({
 
 	const onSubmit = async (data) => {
 		await addTask(selectedBoard.id, dataToJsonTask(data));
+		//TODO: ADD TASK TO STORE
 		// dispatch(createBoardForSlice(transformData(data)));
 
 		closeModel();
