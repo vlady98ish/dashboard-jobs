@@ -28,7 +28,6 @@ npm start
 ## Technology Stack
 - React
 - Tailwind CSS
-- Node.js
 - Redux Toolkit
 
 
