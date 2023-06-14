@@ -11,7 +11,6 @@ This full-stack Kanban application allows users to create, read, update, and del
 - Mark subtasks as complete and move tasks between columns
 - Toggle between light/dark themes
 - Hide/show board sidebar
-- Track changes using localStorage
 
 Here is a [live demo](https:/#) of the app.
 
